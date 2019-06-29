@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Admin extends Authenticatable
 {
     use Notifiable;
+    use SoftDeletes;
 
     protected $guard = 'admin';
     
@@ -18,7 +20,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'NamaLengkap', 'email', 'password', 'NomorTelepon', 'IDLine'
+        'NamaLengkap', 'email', 'password', 'NomorHP', 'IDLine'
     ];
 
     /**

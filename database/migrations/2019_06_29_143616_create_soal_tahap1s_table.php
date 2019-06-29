@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InsertWaktuSubmitSuratToUsers extends Migration
+class CreateSoalTahap1sTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class InsertWaktuSubmitSuratToUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dateTime('WaktuSubmitSurat')->after('SuratKeteranganAktif')->nullable();
+        Schema::create('soal_tahap1s', function (Blueprint $table) {
+            $table->increments('id');
+            $table->mediumText('DeskripsiSoal');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +28,6 @@ class InsertWaktuSubmitSuratToUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('WaktuSubmitSurat');
-        });
+        Schema::dropIfExists('soal_tahap1s');
     }
 }

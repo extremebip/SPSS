@@ -18,7 +18,7 @@ class CreateAdminsTable extends Migration
             $table->string('NamaLengkap');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('NomorTelepon');
+            $table->string('NomorHP');
             $table->string('IDLine')->nullable();
             $table->string('Roles');
             $table->rememberToken();

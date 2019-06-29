@@ -12,12 +12,12 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="NamaLengkap" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lengkap') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="NamaLengkap" type="text" class="form-control @error('NamaLengkap') is-invalid @enderror" name="NamaLengkap" value="{{ old('NamaLengkap') }}" required autocomplete="NamaLengkap" autofocus>
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                @error('NamaLengkap')
+                                @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -26,12 +26,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="AsalUniversitas" class="col-md-4 col-form-label text-md-right">{{ __('Asal Universitas') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="AsalUniversitas" type="text" class="form-control @error('AsalUniversitas') is-invalid @enderror" name="AsalUniversitas" value="{{ old('AsalUniversitas') }}" required autocomplete="AsalUniversitas" autofocus>
 
-                                @error('email')
+                                @error('AsalUniversitas')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
