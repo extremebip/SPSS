@@ -15,8 +15,8 @@ class CreateJawabanTahap1sTable extends Migration
     {
         Schema::create('jawaban_tahap1s', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('soal_tahap1_id');
-            $table->integer('user_id');
+            $table->integer('soal_tahap1_id')->nullable();
+            $table->integer('user_id')->nullable();
             $table->string('Jawaban')->nullable();
             $table->timestamps();
             $table->softDeletes();

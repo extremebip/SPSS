@@ -15,7 +15,7 @@ class CreateTeamTahap2sTable extends Migration
     {
         Schema::create('team_tahap2s', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->integer('Skor')->nullable();
             $table->string('FileSubmitCara')->nullable();
             $table->dateTime('WaktuSubmit')->nullable();

@@ -15,7 +15,7 @@ class CreateTeamDetailsTable extends Migration
     {
         Schema::create('team_details', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('NamaPeserta1');
             $table->string('JurusanPeserta1');
             $table->string('NoHPPeserta1');

@@ -15,7 +15,7 @@ class CreatePembayaranLombasTable extends Migration
     {
         Schema::create('pembayaran_lombas', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->string('NamaPengirim')->nullable();
             $table->string('NamaBank')->nullable();
             $table->string('BuktiTransfer')->nullable();

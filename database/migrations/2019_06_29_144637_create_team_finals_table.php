@@ -15,7 +15,7 @@ class CreateTeamFinalsTable extends Migration
     {
         Schema::create('team_finals', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
+            $table->integer('user_id')->nullable();
             $table->boolean('IsWaiting')->nullable();
             $table->boolean('IsConfirmed')->nullable();
             $table->timestamps();

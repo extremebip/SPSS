@@ -11,7 +11,6 @@ class AdminLoginController extends Controller
 {
     use AuthenticatesUsers;
     protected $guard = 'admin';
-    protected $redirectTo = '/home';
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
