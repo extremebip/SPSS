@@ -26,3 +26,6 @@ Route::post('login', ['as' => 'login', 'uses' => 'Auth\LoginController@login']);
 
 Route::get('/payment', 'PembayaranLombaController@index');
 Route::post('/payment', 'PembayaranLombaController@store');
+
+Route::get('/register-peserta', 'TeamDetailController@index');
+Route::post('/register-peserta', 'TeamDetailController@store');

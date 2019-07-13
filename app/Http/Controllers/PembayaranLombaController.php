@@ -24,7 +24,7 @@ class PembayaranLombaController extends Controller
         $this->validate($request, [
             'NamaPengirim' => ['required', 'string', 'max:255'],
             'NamaBank' => ['required', 'string', 'max:255'],
-            'BuktiTransfer' => ['required', 'file', 'mimes:jpg,jpeg,png', 'max:3999']
+            'BuktiTransfer' => ['required', 'file', 'image', 'max:3999']
         ]);
 
         $filePath = Storage::put('bukti_pembayaran', $request->file('BuktiTransfer'));
@@ -38,6 +38,6 @@ class PembayaranLombaController extends Controller
             'WaktuSubmitTransfer' => Carbon::now(),
         ]);
 
-        return redirect()->action('DashboardController@index');
+        return redirect()->action('TeamDetailController@index');
     }
 }
