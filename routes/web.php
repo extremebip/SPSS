@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::post('/timeline', 'TimelineController@getTimeline');
+
 Route::get('admin', 'AdminController@index')->name('adminpage');
 Route::get('admin-login','Auth\AdminLoginController@showLoginForm');
 Route::post('admin-login', ['as' => 'admin-login', 'uses' => 'Auth\AdminLoginController@login']);

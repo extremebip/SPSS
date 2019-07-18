@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,6 +23,7 @@
             padding-top: 5rem;
         }
     </style>
+    @yield('style')
 </head>
 <body>
     {{-- <div id="app"> --}}
@@ -77,9 +78,14 @@
             </div>
         </nav>
 
-        <main class="container">
-            @yield('userContent')
-        </main>
+        @yield('userContent')
     {{-- </div> --}}
+    
+    <script>
+        $.ajaxSetup({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+        });
+    </script>
+    @yield('script')
 </body>
 </html>

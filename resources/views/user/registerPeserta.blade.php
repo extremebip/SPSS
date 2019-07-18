@@ -1,7 +1,7 @@
 @extends('layouts.userLayout')
 
 @section('userContent')
-    {{-- <div class="container px-5 mx-5"> --}}
+    <div class="container px-5 mx-5">
         {{ Form::open(['url' => '/register-peserta', 'files' => true]) }}
             <h2>Registrasi Peserta</h2>
             <br>
@@ -112,5 +112,5 @@
                 </div>
             </div>
         {{ Form::close() }}
-    {{-- </div> --}}
+    </div>
 @endsection

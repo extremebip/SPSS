@@ -10,7 +10,7 @@ class PembayaranLomba extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'NamaPengirim', 'NamaBank', 'BuktiTransfer', 'WaktuSubmitTransfer', 'admin_id'
+        'user_id', 'NamaPengirim', 'NamaBank', 'BuktiTransfer', 'WaktuSubmitTransfer', 'admin_id'
     ];
 
     public function user()

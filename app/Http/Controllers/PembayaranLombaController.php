@@ -16,6 +16,7 @@ class PembayaranLombaController extends Controller
 
     public function index()
     {
+        if (Auth::user()->pembayaranLomba()->exists()) return redirect()->action('TeamDetailController@index');
         return view('user.payment');
     }
 

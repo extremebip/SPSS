@@ -15,6 +15,7 @@ class TeamDetailController extends Controller
 
     public function index()
     {
+        if (Auth::user()->teamDetail()->exists()) return redirect()->action('DashboardController@index');
         return view('user.registerPeserta');
     }
 
