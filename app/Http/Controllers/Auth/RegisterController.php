@@ -69,8 +69,6 @@ class RegisterController extends Controller
             'AsalUniversitas' => $data['AsalUniversitas'],
         ]);
 
-        $user->sendEmailVerificationNotification();
-
         return $user;
     }
 }
