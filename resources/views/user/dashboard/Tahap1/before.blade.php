@@ -1,6 +1,7 @@
 @extends('user.dashboard')
 
 @section('dashboardBody')
+<div class="content-text">
     <h5 class="d-inline"><strong id="time"></strong></h5>
     <div class="d-inline"> to SPSS Round 1</div>
     {{-- <p><h5><strong id="time"></strong></h5> to SPSS Round 1</p> --}}
@@ -12,6 +13,7 @@
         <li></li>
     </ol>
     <p>Read guide book for Round 1: <a href="">Click Here</a></p>
+</div>
 @endsection
 
 @section('script')
