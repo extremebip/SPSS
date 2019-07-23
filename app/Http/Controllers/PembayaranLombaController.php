@@ -23,8 +23,8 @@ class PembayaranLombaController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'NamaPengirim' => ['required', 'string', 'max:255'],
-            'NamaBank' => ['required', 'string', 'max:255'],
+            'NamaPengirim' => ['required', 'string', 'max:100'],
+            'NamaBank' => ['required', 'string', 'max:100'],
             'BuktiTransfer' => ['required', 'file', 'image', 'max:3999']
         ]);
 
