@@ -1,5 +1,19 @@
 @extends('layouts.userLayout')
 
+@section('style')
+<style>
+    .btn-choose{
+        margin-left: 0px;
+    }
+</style>
+@endsection
+
+@section('header')
+<div class="header">
+    <img src="{{asset('storage/Assets/Logo Spss.png')}}">
+</div>
+@endsection
+
 @section('userContent')
 <div class="container">
     <div class="row justify-content-center">
@@ -33,7 +47,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-choose submit-btn">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>

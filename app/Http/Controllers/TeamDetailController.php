@@ -26,12 +26,12 @@ class TeamDetailController extends Controller
             'NamaPeserta1' => ['required', 'string', 'max:100'],
             'JurusanPeserta1' => ['required', 'string', 'max:30'],
             'NoHPPeserta1' => ['required', 'string', 'max:20'],
-            'IDLinePeserta1' => ['string', 'max:20'],
+            'IDLinePeserta1' => ['nullable', 'string', 'max:20'],
             'KartuTandaMahasiswa1' => ['required', 'file', 'image', 'max:3999'],
             'NamaPeserta2' => ['required', 'string', 'max :100'],
             'JurusanPeserta2' => ['required', 'string', 'max:30'],
             'NoHPPeserta2' => ['required', 'string', 'max:20'],
-            'IDLinePeserta2' => ['string', 'max:20'],
+            'IDLinePeserta2' => ['nullable', 'string', 'max:20'],
             'KartuTandaMahasiswa2' => ['required', 'file', 'image', 'max:3999'],
         ]);
 

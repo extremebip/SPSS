@@ -141,3 +141,7 @@ body{
 .width-input{
 	width: 140px;
 }
+
+.input-field{
+	background-color: #f2f2f2;
+}

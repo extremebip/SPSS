@@ -1,90 +1,83 @@
 @extends('layouts.userLayout')
 
+@section('style')
+    <style>
+        .content{
+            margin-top: 0px;
+        }
+
+        .content-text{
+            background-color: white;
+        }
+
+        .form-control{
+            background-color: #f2f2f2;
+        }
+
+        .form-control:focus{
+            background-color: #f2f2f2;
+        }
+    </style>
+@endsection
+
+@section('header')
+<div class="header">
+    <img src="{{asset('storage/Assets/Logo Spss.png')}}">
+</div>
+@endsection
+
 @section('userContent')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="NamaLengkap" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lengkap') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="NamaLengkap" type="text" class="form-control @error('NamaLengkap') is-invalid @enderror" name="NamaLengkap" value="{{ old('NamaLengkap') }}" required>
-
-                                @error('NamaLengkap')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="AsalUniversitas" class="col-md-4 col-form-label text-md-right">{{ __('Asal Universitas') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="AsalUniversitas" type="text" class="form-control @error('AsalUniversitas') is-invalid @enderror" name="AsalUniversitas" value="{{ old('AsalUniversitas') }}" required autocomplete="AsalUniversitas" autofocus>
-
-                                @error('AsalUniversitas')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<div class="body">
+    <div class="content">
+        <div class="content-text">
+            <h4 class="content"><strong>Register</strong></h4>
+            <br>
+            {{ Form::open(['url' => 'register']) }}
+                <div class="form-group border-bottom border-dark input-field">
+                    {{ Form::label('NamaLengkap', 'Nama Lengkap', ['class' => 'col-form-label px-2']) }}
+                    {{ Form::text('NamaLengkap', '', ['class' => 'form-control border-0 '.($errors->has('NamaLengkap') ? 'is-invalid' : ''), 'value' => old('NamaLengkap'), 'required' => '', 'autofocus' => '', 'autocomplete' => 'NamaLengkap']) }}
+                    @error('NamaLengkap')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </div>
-            </div>
+                <div class="form-group border-bottom border-dark input-field">
+                    {{ Form::label('email', 'E-mail', ['class' => 'col-form-label px-2']) }}
+                    {{ Form::email('email', '', ['class' => 'form-control border-0 '.($errors->has('email') ? 'is-invalid' : ''), 'value' => old('email'), 'required' => '', 'autofocus' => '', 'autocomplete' => 'email']) }}
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group border-bottom border-dark input-field">
+                    {{ Form::label('AsalUniversitas', 'Asal Universitas', ['class' => 'col-form-label px-2']) }}
+                    {{ Form::text('AsalUniversitas', '', ['class' => 'form-control border-0 '.($errors->has('AsalUniversitas') ? 'is-invalid' : ''), 'value' => old('AsalUniversitas'), 'required' => '', 'autofocus' => '', 'autocomplete' => 'AsalUniversitas']) }}
+                    @error('AsalUniversitas')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group border-bottom border-dark input-field">
+                    {{ Form::label('password', 'Password', ['class' => 'col-form-label px-2']) }}
+                    {{ Form::password('password', ['class' => 'form-control border-0 '.($errors->has('password') ? 'is-invalid' : ''), 'required' => '', 'autocomplete' => 'new-password']) }}
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="form-group border-bottom border-dark input-field">
+                    {{ Form::label('password_confirmation', 'Confirm Password', ['class' => 'col-form-label px-2']) }}
+                    {{ Form::password('password_confirmation', ['class' => 'form-control border-0', 'required' => '', 'autocomplete' => 'new-password']) }}
+                </div>
+                <div class="form-group justify-content-end">
+                    <p>Have an Account? <a href="/login" class="btn btn-link">Sign in</a></p>
+                    {{ Form::submit('Submit', ['class' => 'btn btn-choose submit-btn']) }}
+                </div>
+            {{ Form::close() }}
         </div>
     </div>
 </div>
