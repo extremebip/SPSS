@@ -68,9 +68,9 @@
 
         @yield('header')
         
-        <div class="body">
+        {{-- <div class="body"> --}}
             @yield('userContent')
-        </div>
+        {{-- </div> --}}
         
         <div class="footer">
 			<div class="footer-information">

@@ -117,3 +117,27 @@ body{
 	margin-left: 7px;
 	width: 4%;
 }
+
+.content-wrapper{
+	width: 90%;
+	margin: auto;
+}
+
+.upload-btn{
+	text-decoration: none;
+	font-weight: 600;
+	background-color: #f2f2f2;
+	padding: 5px;
+	border-radius: 5px;
+	color: black;
+}
+
+.submit-btn{
+	border-radius: 8px;
+	margin-left: 85%;
+	padding: 7px 20px;
+}
+
+.width-input{
+	width: 140px;
+}
