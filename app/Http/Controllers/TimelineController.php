@@ -8,6 +8,10 @@ use Carbon\Carbon;
 
 class TimelineController extends Controller
 {
+    public function __construct() {
+        
+    }
+
     public function getTimeline(Request $request)
     {
         $timeline = Timeline::find($request['id']);

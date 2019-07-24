@@ -1,17 +1,19 @@
 @extends('user.dashboard')
 
 @section('dashboardBody')
-    <h5 class="d-inline"><strong id="time"></strong></h5>
+<div class="content-text">
+    <h5 class="d-inline"><strong id="time"></strong>
     <div class="d-inline"> to SPSS Round 1</div>
-    {{-- <p><h5><strong id="time"></strong></h5> to SPSS Round 1</p> --}}
-    <p>Material:</p>
+    </h5>
+    <h5>Material:</h5>
     <ol>
         <li></li>
         <li></li>
         <li></li>
         <li></li>
     </ol>
-    <p>Read guide book for Round 1: <a href="">Click Here</a></p>
+    <h5>Read guide book for Round 1: Click <a href="" class="button" id="guideBook">here</a></h5>
+</div>
 @endsection
 
 @section('script')
@@ -29,6 +31,10 @@
 
                 countdown = datetime.getTime();
             }, 'json');
+
+            // $('#guideBook').click(function () {
+            //     window.location.replace();
+            // })
         });
 
         var x = setInterval(function() {

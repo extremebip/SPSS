@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,7 @@ class DashboardController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'verified']);
     }
 
     /**
@@ -36,6 +37,9 @@ class DashboardController extends Controller
         if (is_null($team->pembayaranLomba()->get()->first()->admin_id)){
             return view('user.dashboard.verification');
         }
+
+        $now = Carbon::now();
+        
 
         return view('user.dashboard.Tahap1.before');
     }

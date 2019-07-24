@@ -1,7 +1,19 @@
 @extends('layouts.userLayout')
 
+@section('style')
+    <style>
+    </style>
+@endsection
+
+@section('header')
+<div class="header">
+    <img src="{{asset('storage/Assets/Logo Spss.png')}}">
+</div>
+@endsection
+
 @section('userContent')
-    <div class="container px-5 mx-5">
+<div class="content-wrapper">
+    <div>
         {{ Form::open(['url' => '/register-peserta', 'files' => true]) }}
             <h2>Registrasi Peserta</h2>
             <br>
@@ -47,8 +59,11 @@
                 @enderror
             </div>
             <div class="form-group row justify-content-start">
-                {{ Form::label('KartuTandaMahasiswa1', 'Upload Kartu Tanda Mahasiswa (KTM)', ['class' => 'col-form-label col-sm-4 pr-0']) }}
-                {{ Form::file('KartuTandaMahasiswa1', ['class' => 'form-control-file col-sm-4 pl-0 '.($errors->has('KartuTandaMahasiswa1') ? 'is-invalid' : '')]) }}
+                <p class="col-form-label col-sm-4 pr-0 d-inline">Upload Kartu Tanda Mahasiswa (KTM)</p>
+                {{ Form::label('KartuTandaMahasiswa1', 'Choose File', ['class' => 'upload-btn d-inline', 'style' => 'cursor:pointer;']) }}
+                <img class="img-upload d-inline" src="{{asset('storage/Assets/upload.png')}}" alt="">
+                <p id="fileName1" style="display:none;" class="d-inline"></p>
+                {{ Form::file('KartuTandaMahasiswa1', ['class' => 'form-control-file col-sm-4 pl-0 '.($errors->has('KartuTandaMahasiswa1') ? 'is-invalid' : ''), 'style' => 'visibility:hidden;']) }}
                 @error('KartuTandaMahasiswa1')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -98,8 +113,11 @@
                 @enderror
             </div>
             <div class="form-group row justify-content-start">
-                {{ Form::label('KartuTandaMahasiswa2', 'Upload Kartu Tanda Mahasiswa (KTM)', ['class' => 'col-form-label col-sm-4 pr-0']) }}
-                {{ Form::file('KartuTandaMahasiswa2', ['class' => 'form-control-file col-sm-4 pl-0 '.($errors->has('KartuTandaMahasiswa2') ? 'is-invalid' : '')]) }}
+                <p class="col-form-label col-sm-4 pr-0">Upload Kartu Tanda Mahasiswa (KTM)</p>
+                {{ Form::label('KartuTandaMahasiswa2', 'Choose File', ['class' => 'upload-btn', 'style' => 'cursor:pointer;']) }}
+                <img class="img-upload d-inline" src="{{asset('storage/Assets/upload.png')}}" alt="">
+                <p id="fileName2" style="display:none;" class="d-inline"></p>
+                {{ Form::file('KartuTandaMahasiswa2', ['class' => 'form-control-file col-sm-4 pl-0 '.($errors->has('KartuTandaMahasiswa2') ? 'is-invalid' : ''), 'style' => 'visibility:hidden;']) }}
                 @error('KartuTandaMahasiswa2')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -108,9 +126,26 @@
             </div>
             <div class="form-group row justify-content-end">
                 <div class="col-sm-2">
-                    {{ Form::submit('Submit', ['class' => 'btn btn-warning']) }}
+                    {{ Form::submit('Submit', ['class' => 'btn btn-choose submit-btn']) }}
                 </div>
             </div>
         {{ Form::close() }}
     </div>
+</div>
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function () {
+            $("#KartuTandaMahasiswa1").change(function() {
+                filename = this.files[0].name
+                $('#fileName1').text(filename).show();
+            });
+
+            $("#KartuTandaMahasiswa2").change(function() {
+                filename = this.files[0].name
+                $('#fileName2').text(filename).show();
+            });
+        });
+    </script>
 @endsection

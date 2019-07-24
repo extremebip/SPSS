@@ -14,8 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/competition', function (){
+    return view('competition');
+});
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
@@ -25,6 +28,9 @@ Route::get('admin', 'AdminController@index')->name('adminpage');
 Route::get('admin-login','Auth\AdminLoginController@showLoginForm');
 Route::post('admin-login', ['as' => 'admin-login', 'uses' => 'Auth\AdminLoginController@login']);
 Route::post('login', ['as' => 'login', 'uses' => 'Auth\LoginController@login']);
+
+Route::get('/password/change', 'Auth\ChangePasswordController@index');
+Route::post('/password/change', 'Auth\ChangePasswordController@change');
 
 Route::get('/payment', 'PembayaranLombaController@index');
 Route::post('/payment', 'PembayaranLombaController@store');
