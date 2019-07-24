@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class TimelineController extends Controller
 {
     public function __construct() {
-        $this->middleware(['auth', 'verified']);
+        
     }
 
     public function getTimeline(Request $request)
