@@ -14,6 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/competition', function (){
+    return view('competition');
+});
 
 Auth::routes(['verify' => true]);
 
