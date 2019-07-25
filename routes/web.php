@@ -12,8 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+Route::permanentRedirect('/home', '/');
 Route::get('/competition', function (){
     return view('competition');
 });

@@ -38,11 +38,16 @@ class TeamDetailController extends Controller
         Storage::makeDirectory('team//'.Auth::id());
         Storage::makeDirectory('team//'.Auth::id().'/ktm');
 
-        $filePath = Storage::put('team//'.Auth::id().'/ktm', $request->file('KartuTandaMahasiswa1'));
-        $ktm1 = basename($filePath);
+        $ext1 = $request['KartuTandaMahasiswa1']->getClientOriginalExtension();
+        $ext2 = $request['KartuTandaMahasiswa2']->getClientOriginalExtension();
 
-        $filePath = Storage::put('team//'.Auth::id().'/ktm', $request->file('KartuTandaMahasiswa2'));
-        $ktm2 = basename($filePath);
+        $fileName1 = sprintf("KTM-%d1-%s-%s.%s", Auth::id(), str_replace(' ', '_', $request['NamaPeserta1']), str_replace(' ', '_', $request['JurusanPeserta1']), $ext1);
+
+        $fileName2 = sprintf("KTM-%d1-%s-%s.%s", Auth::id(), str_replace(' ', '_', $request['NamaPeserta2']), str_replace(' ', '_', $request['JurusanPeserta2']), $ext2);
+
+        $filePath1 = Storage::putFileAs('team//'.Auth::id().'/ktm', $request->file('KartuTandaMahasiswa1'), $fileName1);
+
+        $filePath2 = Storage::putFileAs('team//'.Auth::id().'/ktm', $request->file('KartuTandaMahasiswa2'), $fileName2);
 
         TeamDetail::create([
             'user_id' => Auth::id(),
@@ -50,12 +55,12 @@ class TeamDetailController extends Controller
             'JurusanPeserta1' => $request['JurusanPeserta1'],
             'NoHPPeserta1' => $request['NoHPPeserta1'],
             'IDLinePeserta1' => $request['IDLinePeserta1'],
-            'KartuTandaMahasiswa1' => $ktm1,
+            'KartuTandaMahasiswa1' => $fileName1,
             'NamaPeserta2' => $request['NamaPeserta2'],
             'JurusanPeserta2' => $request['JurusanPeserta2'],
             'NoHPPeserta2' => $request['NoHPPeserta2'],
             'IDLinePeserta2' => $request['IDLinePeserta2'],
-            'KartuTandaMahasiswa2' => $ktm2,
+            'KartuTandaMahasiswa2' => $fileName2,
         ]);
 
         return redirect()->action('DashboardController@index');

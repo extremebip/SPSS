@@ -28,8 +28,10 @@ class PembayaranLombaController extends Controller
             'BuktiTransfer' => ['required', 'file', 'image', 'max:3999']
         ]);
 
-        $filePath = Storage::put('bukti_pembayaran', $request->file('BuktiTransfer'));
-        $fileName = basename($filePath);
+        $ext = $request['BuktiTransfer']->getClientOriginalExtension();
+        $fileName = sprintf("BuktiTransfer-%d-%s-%s.%s", Auth::id(), str_replace(' ', '_', $request['NamaPengirim']), str_replace(' ', '_', $request['NamaBank']), $ext);
+        
+        $filePath = Storage::putFileAs("bukti_pembayaran", $request->file('BuktiTransfer'), $fileName);
 
         $PembayaranLomba = PembayaranLomba::create([
             'user_id' => Auth::id(),
