@@ -1,0 +1,85 @@
+.img{
+    width: 500px;
+    height: 500px;
+}
+
+.img-vid{
+    width: 400px;
+    height: 400px;
+}
+
+.title{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.title-text{
+    font-size: 4rem;
+}
+
+.desc-title{
+    font-size: 3rem;
+}
+
+.desc-text{
+    text-align: right;
+}
+
+#time{
+    font-size: 3rem;
+}
+
+.rounded-circle{
+    background-color: #f2f2f2;
+    width: 300px;
+    height: 300px;
+}
+
+.button-text{
+    margin-bottom: 0px;
+}
+
+.competition{
+    background-color: #fda0a0;
+    margin-top: 55px;
+}
+
+.competition-body{
+    margin-top: -45px;
+    padding-bottom: 1rem; 
+}
+
+.card-img-top{
+    height: 12rem;
+}
+
+.card-body{
+    padding: 0.25rem;
+    background-color: #f2f2f2;
+}
+
+#comp-regis{
+    margin-top: 15px;
+    margin-left: auto;
+}
+
+.talkshow{
+    background-color: #fed57e;
+    margin-top: 55px;
+}
+
+.talkshow-itm-img{
+    margin-top: -25px;
+    margin-bottom: 15px;
+}
+
+.talkshow-img{
+    max-width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+}
+
+#talkshow-regis{
+    margin-left: 0px;
+    margin-right: auto;
+}

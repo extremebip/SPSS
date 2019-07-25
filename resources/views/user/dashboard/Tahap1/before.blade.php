@@ -20,7 +20,7 @@
     <script>
         var countdown;
         $(document).ready(function () {
-            $.post('/timeline', { id : 1 } ,function (data) {
+            $.post('/timeline', { id : 2 } ,function (data) {
                 console.log(data['datetime']);
                 try {
                     datetime = new Date(data['datetime']);
