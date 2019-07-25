@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css')}}">
+	<link rel="stylesheet" href="{{ asset('css/style.css')}}">
+	<link rel="icon" type="image/png" href="{{asset('storage/Assets/favicon dan icon.png')}}">
     @yield('style')
 </head>
 <body>
@@ -20,14 +21,14 @@
 			<div class="collapse navbar-collapse" id="navbarText">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="#">Competition</a>
+						<a class="nav-link" href="/competition">Competition</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="#">Talkshow</a>
 					</li>
-					<li class="nav-item">
+					{{-- <li class="nav-item">
 						<a class="nav-link" href="#">Blog</a>
-					</li>
+					</li> --}}
 					<li class="nav-item">
 						<a class="nav-link" href="#">About</a>
 					</li>
@@ -68,11 +69,9 @@
 			</div>
         </nav>
 
-        @yield('header')
-        
-        {{-- <div class="body"> --}}
-            @yield('userContent')
-        {{-- </div> --}}
+		@yield('header')
+		
+        @yield('userContent')
         
         <div class="footer">
 			<div class="footer-information">
