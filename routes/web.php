@@ -18,6 +18,12 @@ Route::permanentRedirect('/home', '/');
 Route::get('/competition', function (){
     return view('competition');
 });
+Route::get('/about', function (){
+    return view('about');
+});
+Route::get('/talkshow', function () {
+    return view('talkshow');
+});
 
 Auth::routes(['verify' => true]);
 

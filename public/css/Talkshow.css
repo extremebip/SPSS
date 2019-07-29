@@ -1,0 +1,156 @@
+.wrapper{
+	width: 80%;
+	margin: auto;
+}
+
+body{
+	margin: auto;
+}
+
+.footer{
+	width: 85%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+	justify-content: space-around;
+}
+
+.navbar-logo{
+	width: 4%;
+	margin-right: 28px;
+}
+
+.nav-reg{
+	margin-left: 500px;
+	padding: 0px 15px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+}
+
+.nav-signIn{
+	margin-left: 20px;
+	padding: 0px 15px;
+	border-radius: 5px;
+	background-color: #f2f2f2;
+}
+
+.section{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.footer{
+	width: 85%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	margin-top: 60px;
+	justify-content: space-around;
+}
+
+.footer-content-text{
+	font-size: 11px;
+}
+
+.footer-container{
+	position: relative;
+	text-align: center;
+}
+
+.footer-information{
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer-container img{
+	height: 80%;
+	width: 130%;
+	margin-left: -20%;
+}
+
+.section-information{
+	display: flex;
+	justify-content: space-around;
+}
+
+.header-img{
+	position: left;
+	width: 60%;
+}
+
+.header-text{
+	position: relative;
+	text-align: right;
+	margin: 50px 35px;
+}
+
+.header-title{
+	font-size: 65px;
+	font-weight: 900;
+}
+
+.header-countdown{
+	margin: 10px;
+	font-weight: 700;
+}
+
+.center-text{
+	position: absolute;
+	top: 60%;
+	left: 48%;
+	font-weight: 600;
+	transform: translate(-50%, 50%);
+}
+
+.ts-content{
+	margin-top: 30px;
+}
+
+.ts-left-content{
+	position: left;
+	text-align: left;
+}
+
+.ts-right-content{
+	position: relative;
+	text-align: right;
+	margin: 80px 0px;
+}
+
+.ts-right-text{
+	font-weight: 400;
+	margin: 30px 0px;
+}
+
+.ts-img{
+	width: 70%;
+}
+
+.btn-reg{
+	margin: 0px 20px;
+	border-radius: 8px;
+	padding: 7px 20px;
+	background-color: #7ec6c5;
+	color: black;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.time-place{
+	margin: 60px 0px 100px 60px;
+}
+
+.time-place-font{
+	font-weight: 350;
+}
+
+.box{
+	width: 65%;
+	background-color: #f2f2f2;
+	padding: 15px 20px;
+	border-radius: 3px;
+	margin: 15px 0px;
+
+}

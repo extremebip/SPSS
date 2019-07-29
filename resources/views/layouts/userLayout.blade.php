@@ -24,13 +24,13 @@
 						<a class="nav-link" href="/competition">Competition</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Talkshow</a>
+						<a class="nav-link" href="/talkshow">Talkshow</a>
 					</li>
 					{{-- <li class="nav-item">
 						<a class="nav-link" href="#">Blog</a>
 					</li> --}}
 					<li class="nav-item">
-						<a class="nav-link" href="#">About</a>
+						<a class="nav-link" href="/about">About</a>
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
