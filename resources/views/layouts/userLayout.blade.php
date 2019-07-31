@@ -12,9 +12,11 @@
     @yield('style')
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<img class="navbar-logo" src="{{ asset('storage/Assets/favicon dan icon.png')}}">
+			<a href="/home" class="navbar-brand">
+        		<img src="{{asset('storage/Assets/favicon dan icon.png')}}" height="50" width="50">
+        	</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -74,23 +76,6 @@
         @yield('userContent')
         
         <div class="footer">
-			<div class="footer-information">
-				<div class="footer-content">
-				<h6>SECRETARIAT</h6>
-				<p class="footer-content-text">HIMPUNAN MAHASISWA STATISTIKA BINUS <br> (HIMSTAT-BINUS) <br> Jl. Kyai H. Syahdan No. 9</p>
-			</div>
-			
-			<div class="footer-content">
-				<h6>SOCIAL MEDIA</h6>
-				<p class="footer-content-text">INSTAGRAM <br> FACEBOOK <br> TWITTER <br> YOUTUBE </p>
-			</div>
-
-			<div class="footer-content">
-				<h6>CONTACT PERSON</h6>
-				<P class="footer-content-text">Nama 1 (WA: +62800000000) <br> Nama 2 (WA: +62800000000) <br> Line: @asdfg </P>
-			</div>
-			</div>
-
 			<div class="footer-container">
 				<img src="{{asset('storage/Assets/footer.png')}}">
 				<div class="center-text">&copy; SPSS by HIMSTAT BINUS 2019</div>

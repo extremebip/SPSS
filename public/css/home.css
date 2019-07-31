@@ -1,27 +1,41 @@
-.img{
-    width: 500px;
-    height: 500px;
+.img-vid{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.img-vid{
-    width: 400px;
-    height: 400px;
+@media only screen and (orientation: landscape){
+    .img-fluid{
+        width: 50%;
+        height: auto;
+    }
+
+    .img-vid{
+        width: 45%;
+        height: auto;
+    }
 }
 
 .title{
-    margin-top: 5%;
-    margin-left: 5%;
+    line-height: 0.8;
 }
 
 .title-text{
+    font-family: 'Airbnb Cereal App Black';
     font-size: 4rem;
 }
 
+.desc-group{
+    line-height: 0.8;
+}
+
 .desc-title{
+    font-family: 'Airbnb Cereal App Black';
     font-size: 3rem;
 }
 
 .desc-text{
+
     text-align: right;
 }
 
@@ -62,8 +76,11 @@
     margin-top: 15px;
     margin-left: auto;
 }
-
+.home-img{
+    float:left;
+}
 .talkshow{
+    flex-direction: row-reverse;
     background-color: #fed57e;
     margin-top: 55px;
 }
@@ -74,6 +91,7 @@
 }
 
 .talkshow-img{
+    float: left;
     max-width: 100%;
     height: auto;
     background-color: #f2f2f2;
@@ -82,4 +100,18 @@
 #talkshow-regis{
     margin-left: 0px;
     margin-right: auto;
+}
+
+@media only screen and (orientation: portrait){
+    .img-vid{
+        width: 100%;
+    }
+
+    #talkshow-regis{
+        margin-bottom: 5%;
+    }
+
+    .competition-item{
+        margin-bottom: 5%;
+    }
 }

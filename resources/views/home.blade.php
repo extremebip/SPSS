@@ -6,29 +6,27 @@
 
 @section('userContent')
 <div class="container">
-    <div class="row">
-        <div class="col order-2">
-            <img class="img" src="{{ asset('storage/Assets/home.png') }}" alt="">
+    <div class="row d-flex flex-column-reverse">
+        <div class="">
+            <img class="img-fluid float-right" src="{{asset('storage/Assets/home.png')}}" alt="">
         </div>
-        <div class="col d-flex flex-column justify-content-start align-items-start title order-1">
-            <h1 class="title-text"><strong>Achieve</strong></h1> 
-            <h1 class="title-text"><strong>Better Life</strong></h1>
-            <h1 class="title-text"><strong>with the</strong></h1>
-            <h1 class="title-text"><strong>Insight of</strong></h1>
-            <h1 class="title-text"><strong>Data</strong></h1>
+        <div class="col title">
+            <p class="title-text"><strong>Achieve</strong></p> 
+            <p class="title-text"><strong>Better Life</strong></p>
+            <p class="title-text"><strong>with the</strong></p>
+            <p class="title-text"><strong>Insight of</strong></p>
+            <p class="title-text"><strong>Data</strong></p>
         </div>
     </div>
-    <div class="row mt-5">
-        <div class="col">
-            <img class="img-vid" src="{{asset('storage/Assets/favicon dan icon.png')}}">
-        </div>
-        <div class="col d-flex flex-column justify-content-center align-items-end">
-            <h1 class="desc-title"><strong>Statistical</strong></h1>
-            <h1 class="desc-title"><strong>Project for</strong></h1>
-            <h1 class="desc-title"><strong>Smart Student</strong></h1>
-            <h1 class="desc-title"><strong>2019</strong></h1>
+    <div class="row mt-5 py-5">
+        <img class="img-vid" src="{{asset('storage/Assets/favicon dan icon.png')}}">
+        <div class="col d-flex flex-column justify-content-center align-items-end desc-group">
+            <p class="desc-title"><strong>Statistical</strong></p>
+            <p class="desc-title"><strong>Project for</strong></p>
+            <p class="desc-title"><strong>Smart Student</strong></p>
+            <p class="desc-title"><strong>2019</strong></p>
             <h5 class="desc-text">Statistical Project for Smart Student atau SPSS adalah acara terbesar dan pertama yang diadakan oleh HIMSTAT Binus University berisikan lomba statistika dan talkshow</h5>
-            <a href="#" class="btn upload-btn submit-btn">Read More</a>
+            <a href="/about" class="btn upload-btn submit-btn">Read More</a>
         </div>
     </div>
 
@@ -70,7 +68,10 @@
 
     <h1 class="mt5"><strong>Talkshow</strong></h1>
     <div class="row talkshow rounded">
-        <div class="col-lg-8 d-flex flex-column justify-content-center">
+    <div class="col-lg-4 talkshow-itm-img">
+        <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="talkshow-img" alt="">
+    </div>
+        <div class="col-lg-8 d-flex flex-column justify-content-center ">
             <h3>Date    : Saturday, October 12th, 2019</h3>
             <h3>Time    : 11:00 - 13:00</h3>
             <h3>Place   : Auditorium, Binus University Anggrek Campus</h3>
@@ -78,9 +79,7 @@
             <br>
             <a href="#" class="upload-btn submit-btn" id="talkshow-regis">Register</a>
         </div>
-        <div class="col-lg-4 talkshow-itm-img">
-            <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="talkshow-img" alt="">
-        </div>
+        
     </div>
 </div>
 @endsection
