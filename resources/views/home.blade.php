@@ -19,7 +19,13 @@
         </div>
     </div>
     <div class="row mt-5 py-5">
-        <img class="img-vid" src="{{asset('storage/Assets/favicon dan icon.png')}}">
+        <div class="col">
+            <video class="video" controls style="display:none;">
+                <source src="{{asset('storage/Assets/Teaser.mov')}}" type="video/mp4">
+            </video>
+            <img src="{{asset('storage/Assets/play video.png')}}" alt="" class="btn-play" >
+        </div>
+        <div class="w-100" id="break"></div>
         <div class="col d-flex flex-column justify-content-center align-items-end desc-group">
             <p class="desc-title"><strong>Statistical</strong></p>
             <p class="desc-title"><strong>Project for</strong></p>
@@ -36,7 +42,7 @@
             <div class="row competition-body">
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Round 1.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
                             <div class="card-title"><h3><strong>Round 1</strong></h3></div>
                         </div>
@@ -44,17 +50,17 @@
                 </div>
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Round 2.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
-                            <div class="card-title"><h3><strong>Round 1</strong></h3></div>
+                            <div class="card-title"><h3><strong>Round 2</strong></h3></div>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Grand Final.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
-                            <div class="card-title"><h3><strong>Round 1</strong></h3></div>
+                            <div class="card-title"><h3><strong>Grand Final</strong></h3></div>
                         </div>
                     </div>
                 </div>
@@ -77,9 +83,21 @@
             <h3>Place   : Auditorium, Binus University Anggrek Campus</h3>
             <h3>Speaker : TBA</h3>
             <br>
-            <a href="#" class="upload-btn submit-btn" id="talkshow-regis">Register</a>
+            <a class="upload-btn submit-btn" id="talkshow-regis">TBA</a>
         </div>
         
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script>
+    $(document).ready(function () {
+        $('.btn-play').click(function () {
+            $('.btn-play').hide();
+            $('.video').show();
+            $('.video').get(0).play();
+        })
+    });
+    </script>
 @endsection

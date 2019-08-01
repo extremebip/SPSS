@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link rel="stylesheet" href="{{asset('css/font.css')}}">
 	<link rel="stylesheet" href="{{ asset('css/style.css')}}">
 	<link rel="icon" type="image/png" href="{{asset('storage/Assets/favicon dan icon.png')}}">
     @yield('style')

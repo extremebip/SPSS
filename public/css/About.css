@@ -1,97 +1,26 @@
-.wrapper{
-	width: 80%;
-	margin: auto;
-}
-
-body{
-	margin: auto;
-}
-
-.footer{
-	width: 85%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	margin-top: 60px;
-	justify-content: space-around;
-}
-
-.navbar-logo{
-	width: 4%;
-	margin-right: 28px;
-}
-
-.nav-reg{
-	margin-left: 500px;
-	padding: 0px 15px;
-	border-radius: 5px;
-	background-color: #f2f2f2;
-}
-
-.nav-signIn{
-	margin-left: 20px;
-	padding: 0px 15px;
-	border-radius: 5px;
-	background-color: #f2f2f2;
-}
-
-
-.footer{
-	width: 85%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	margin-top: 60px;
-	justify-content: space-around;
-}
-
-.footer-content-text{
-	font-size: 11px;
-}
-
-.footer-container{
-	position: relative;
-	text-align: center;
-}
-
-.footer-information{
-	display: flex;
-	justify-content: space-around;
-}
-
-.footer-container img{
-	height: 80%;
-	width: 130%;
-	margin-left: -20%;
-}
-
-.center-text{
-	position: absolute;
-	top: 60%;
-	left: 48%;
-	font-weight: 600;
-	transform: translate(-50%, 50%);
-}
-
 .logo-spss{
 	width: 100%;
 }
 
-.section{
-	margin: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
-
-.section-information{
-	display: flex;
-	justify-content: space-around;
-}
-
 .video{
-	width:500px;
-	margin: 25px 25px;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (min-width: 1012px){
+	#break{
+		width: 0!important;
+		height: 50px;
+	}
+}
+
+.btn-play{
+	display: block;
+	width: auto;
+	height: auto;
+	cursor: pointer;
+	margin: 12.5% auto;
 }
 
 .font{
@@ -103,10 +32,6 @@ body{
 	font-weight: 720;
 }
 
-.text{
-	margin: 27px 25px;
-}
-
 .background {
   background-image: url("Assets/accent.png"); 
   background-position: center; 
@@ -115,18 +40,28 @@ body{
 }
 
 .tujuan-title{
-	margin: 60px 0px 10px 68px;
+	margin: 1% 5%;
 }
 
 .box{
 	background-color: #f2f2f2;
-	padding: 28px 20px 15px 30px;
+	padding: 10px;
 	border-radius: 10px;
 	width: 65%;
-	margin: 20px 0px 80px 35px;
+	margin: 1% 10%;
+	margin-bottom: 50px;
+	font-family: 'Airbnb Cereal App Light';
 	font-size: 18px;
+	font-weight: 500;
 }
 
-.footer-spacing{
-	margin-top: 120px;
+@media only screen and (orientation: portrait){
+	.box{
+		width: 100%;
+	}
+
+	.tujuan-title{
+		display: flex;
+		justify-content: center;
+	}
 }

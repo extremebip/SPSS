@@ -5,37 +5,37 @@
 @endsection
 
 @section('userContent')
-<div class="section">
-    <div class="section-information">
+<div class="container">
+    <div class="row d-flex flex-column">
         <div>
-            <img class="header-img" src="{{asset('storage/Assets/competition-talkshow.png')}}">
+            <img src="{{asset('storage/Assets/competition-talkshow.png')}}" class="img-fluid">
         </div>
-        <div class="header-text">
-            <h1 class="header-title">SPSS <br>TALKSHOW</h1>
-            <h4>Countdown the event!</h4>
-            <h1 class="header-countdown">00:00:00:00</h1>
+        <div class="col title d-flex justify-content-end align-items-end flex-column">
+            <p class="title-text">SPSS</p>
+            <p class="title-text">TALKSHOW</p>
+            <h4>Countdown the event</h4>
+            <h1><strong id="time">00:00:00:00</strong></h1>
         </div>
     </div>
-</div>
 
-<div class="section">
-    <div class="section-information">
-        <div class="ts-content">
-            <h1 class="ts-left-content">OUR SPEAKER</h1>
+    <div class="row pembicara d-flex flex-row">
+        <div class="col">
+            <h1 class="ts-left-content speaker">OUR SPEAKER</h1>
             <img class="ts-img ts-left-content" src="{{asset('storage/Assets/our-speaker.jpg')}}">
-            <h5>nama jabatan ditempatnya</h5>
+            <h5 class="jabatan">Nama (Jabatan di Tempatnya)</h5>
         </div>
-        <div class="ts-right-content">
-            <h3 class="ts-right-text">mempelajari hal yang sedang <br>hangat diperbincangkan <br>saat ini yaitu data. <br>Talkshow ini bertujuan untuk <br>meningkatkan pengetahuan <br>peserta tentang data science. <br>Menarik sekali bukan? <br>Ayo daftarkan diri kamu!</h3>
+        <div class="w-100" id="break"></div>
+        <div class="col text d-flex justify-content-start align-items-end flex-column">
+            <h3 class="ts-right-text">Mempelajari hal yang sedang <br>hangat diperbincangkan <br>saat ini yaitu data. <br>Talkshow ini bertujuan untuk <br>meningkatkan pengetahuan <br>peserta tentang data science. <br>Menarik sekali bukan? <br>Ayo daftarkan diri kamu!</h3>
             <a class="btn-reg" href="">Register</a>
         </div>
     </div>
-</div>
 
-<div class="time-place">
-    <h1>TIME AND PLACE</h1>
-    <div class="box">
-        <h3 class="time-place-font">Date    : Saturday, October 12th 2019 <br>Time    : 11:00 - 13:00 <br>Place   : Auditorium, Binus University Anggrek Campus <br>Speaker : TBA</h3>
+    <div class="row mt-5">
+        <h1 class="col-lg-12">TIME AND PLACE</h1>
+        <div class="box">
+            <h3 class="time-place-font">Date    : Saturday, October 12th 2019 <br>Time    : 11:00 - 13:00 <br>Place   : Auditorium, Binus University Anggrek Campus <br>Speaker : TBA</h3>
+        </div>
     </div>
 </div>
 @endsection

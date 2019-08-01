@@ -1,7 +1,7 @@
-.img-vid{
+.video{
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: auto;
 }
 
 @media only screen and (orientation: landscape){
@@ -16,6 +16,21 @@
     }
 }
 
+@media only screen and (min-width: 1012px){
+    #break{
+        width: 0!important;
+        height: 50px;
+    }
+}
+
+.btn-play{
+    display: block;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    margin: 12.5% auto;
+}
+
 .title{
     line-height: 0.8;
 }
@@ -26,16 +41,17 @@
 }
 
 .desc-group{
+    margin-top: 30px;
     line-height: 0.8;
 }
 
 .desc-title{
+    text-align: right;
     font-family: 'Airbnb Cereal App Black';
     font-size: 3rem;
 }
 
 .desc-text{
-
     text-align: right;
 }
 
@@ -103,6 +119,10 @@
 }
 
 @media only screen and (orientation: portrait){
+    .title-text{
+        font-size: 3rem;
+    }
+
     .img-vid{
         width: 100%;
     }

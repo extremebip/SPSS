@@ -1,116 +1,29 @@
-.wrapper{
-	width: 80%;
-	margin: auto;
+
+
+.title{
+	line-height: 0.8;
 }
 
-body{
-	margin: auto;
+.title-text{
+    font-family: 'Airbnb Cereal App Black';
+    font-size: 4rem;
 }
 
-.footer{
-	width: 85%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	margin-top: 60px;
-	justify-content: space-around;
+
+#time{
+    font-size: 3rem;
 }
 
-.navbar-logo{
-	width: 4%;
-	margin-right: 28px;
+.pembicara{
+	margin-top: 9rem;
 }
 
-.nav-reg{
-	margin-left: 500px;
-	padding: 0px 15px;
-	border-radius: 5px;
-	background-color: #f2f2f2;
+.jabatan{
+	margin-top: 1%;
 }
 
-.nav-signIn{
-	margin-left: 20px;
-	padding: 0px 15px;
-	border-radius: 5px;
-	background-color: #f2f2f2;
-}
-
-.section{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-}
-
-.footer{
-	width: 85%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	margin-top: 60px;
-	justify-content: space-around;
-}
-
-.footer-content-text{
-	font-size: 11px;
-}
-
-.footer-container{
-	position: relative;
-	text-align: center;
-}
-
-.footer-information{
-	display: flex;
-	justify-content: space-around;
-}
-
-.footer-container img{
-	height: 80%;
-	width: 130%;
-	margin-left: -20%;
-}
-
-.section-information{
-	display: flex;
-	justify-content: space-around;
-}
-
-.header-img{
-	position: left;
-	width: 60%;
-}
-
-.header-text{
-	position: relative;
-	text-align: right;
-	margin: 50px 35px;
-}
-
-.header-title{
-	font-size: 65px;
-	font-weight: 900;
-}
-
-.header-countdown{
-	margin: 10px;
-	font-weight: 700;
-}
-
-.center-text{
-	position: absolute;
-	top: 60%;
-	left: 48%;
-	font-weight: 600;
-	transform: translate(-50%, 50%);
-}
-
-.ts-content{
-	margin-top: 30px;
-}
-
-.ts-left-content{
-	position: left;
-	text-align: left;
+.text{
+	text-align: end;
 }
 
 .ts-right-content{
@@ -125,7 +38,7 @@ body{
 }
 
 .ts-img{
-	width: 70%;
+	width: 100%;
 }
 
 .btn-reg{
@@ -147,10 +60,45 @@ body{
 }
 
 .box{
+	text-align: left;
 	width: 65%;
 	background-color: #f2f2f2;
 	padding: 15px 20px;
 	border-radius: 3px;
 	margin: 15px 0px;
+}
 
+@media only screen and (orientation: landscape){
+    .img-fluid{
+        width: 50%;
+        height: auto;
+    }
+
+	#break{
+		width: 0!important;
+		height: 50px;
+	}
+
+	.ts-img{
+		width: 75%;
+	}
+}
+
+
+@media only screen and (orientation: portrait){
+    .title-text{
+        font-size: 3rem;
+    }
+
+    .pembicara{
+		margin-top: 2rem;
+	}
+
+	.speaker{
+		text-align: center;
+	}
+
+	.box{
+		width: 100%;
+	}
 }
