@@ -6,6 +6,7 @@
 }
 
 .title{
+    text-align: end;
     margin-top: 5%;
     line-height: 0.8;
 }

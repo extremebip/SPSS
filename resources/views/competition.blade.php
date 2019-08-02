@@ -76,13 +76,14 @@
                 <li>
                     <div class="timeline-item">
                         <h4><strong>Pengumuman Tahap II</strong></h4>
-                        <p>27 September 2019</p>
+                        <p>28 Oktober 2019</p>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-item">
-                        <h4><strong>Babak Grand Final</strong> (Onsite)</h4>
-                        <p>12 - 14 Oktober 2019</p>
+                        <h4><strong>Babak Grand Final</strong> (Onsite)<span class="text-danger">*</span></h4>
+                        <p>29 - 30 November 2019</p>
+                        <span class="text-danger">*) Waktu dapat dirubah sewaktu-waktu</span>
                     </div>
                 </li>
             </ul>

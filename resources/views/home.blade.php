@@ -11,19 +11,19 @@
             <img class="img-fluid float-right" src="{{asset('storage/Assets/home.png')}}" alt="">
         </div>
         <div class="col title">
-            <p class="title-text"><strong>Achieve</strong></p> 
+            <p class="title-text" id="top"><strong>Achieve</strong></p> 
             <p class="title-text"><strong>Better Life</strong></p>
             <p class="title-text"><strong>with the</strong></p>
             <p class="title-text"><strong>Insight of</strong></p>
             <p class="title-text"><strong>Data</strong></p>
         </div>
     </div>
-    <div class="row mt-5 py-5">
+    <div class="row mt-5 py-5 vid-container">
         <div class="col">
             <video class="video" controls style="display:none;">
                 <source src="{{asset('storage/Assets/Teaser.mov')}}" type="video/mp4">
             </video>
-            <img src="{{asset('storage/Assets/play video.png')}}" alt="" class="btn-play" >
+            <img src="{{asset('storage/Assets/play_video.png')}}" alt="" class="btn-play" >
         </div>
         <div class="w-100" id="break"></div>
         <div class="col d-flex flex-column justify-content-center align-items-end desc-group">
@@ -42,7 +42,7 @@
             <div class="row competition-body">
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/Round 1.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Round_1.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
                             <div class="card-title"><h3><strong>Round 1</strong></h3></div>
                         </div>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/Round 2.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Round_2.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
                             <div class="card-title"><h3><strong>Round 2</strong></h3></div>
                         </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-sm-4 competition-item">
                     <div class="card text-center">
-                        <img src="{{asset('storage/Assets/Grand Final.png')}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/Assets/Grand_Final.png')}}" class="card-img-top" alt="">
                         <div class="card-body">
                             <div class="card-title"><h3><strong>Grand Final</strong></h3></div>
                         </div>
@@ -75,13 +75,13 @@
     <h1 class="mt5"><strong>Talkshow</strong></h1>
     <div class="row talkshow rounded">
     <div class="col-lg-4 talkshow-itm-img">
-        <img src="{{asset('storage/Assets/favicon dan icon.png')}}" class="talkshow-img" alt="">
+        <img src="{{asset('storage/Assets/preview_pembicara.jpg')}}" class="talkshow-img" alt="">
     </div>
         <div class="col-lg-8 d-flex flex-column justify-content-center ">
-            <h3>Date    : Saturday, October 12th, 2019</h3>
-            <h3>Time    : 11:00 - 13:00</h3>
+            <h3>Date    : {{-- Friday, November 29th, 2019 --}}TBA</h3>
+            <h3>Time    : {{-- 11:00 - 13:00 --}}TBA</h3>
             <h3>Place   : Auditorium, Binus University Anggrek Campus</h3>
-            <h3>Speaker : TBA</h3>
+            <h3>Speaker : {{-- --}}TBA</h3>
             <br>
             <a class="upload-btn submit-btn" id="talkshow-regis">TBA</a>
         </div>

@@ -1,4 +1,6 @@
-
+.content1{
+    min-height: calc(100vh - 200px);
+}
 
 .title{
 	line-height: 0.8;
@@ -8,7 +10,6 @@
     font-family: 'Airbnb Cereal App Black';
     font-size: 4rem;
 }
-
 
 #time{
     font-size: 3rem;
