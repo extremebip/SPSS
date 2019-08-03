@@ -2,7 +2,7 @@
 
 @section('header')
 <div class="header">
-    <img src="{{asset('storage/Assets/Logo Spss.png')}}">
+    <img src="{{asset('storage/Assets/Logo_Spss.png')}}">
 </div>
 @endsection
 
