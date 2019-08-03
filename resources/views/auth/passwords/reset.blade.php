@@ -1,20 +1,7 @@
 @extends('layouts.userLayout')
 
 @section('style')
-    <style>
-        .content{
-            margin-top: 0;
-            width: 80%;
-        }
-
-        .form-control{
-            background-color: #f2f2f2;
-        }
-
-        .form-control:focus{
-            background-color: #f2f2f2;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('css/form.css')}}">
 @endsection
 
 @section('header')

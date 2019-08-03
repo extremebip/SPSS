@@ -1,26 +1,7 @@
 @extends('layouts.userLayout')
 
 @section('style')
-    <style>
-        .content{
-            margin-top: 0;
-            width: 80%;
-        }
-
-        .form-control{
-            background-color: #f2f2f2;
-        }
-
-        .form-control:focus{
-            background-color: #f2f2f2;
-        }
-
-        @media only screen and (max-width: 391px){
-            .sign-in{
-                margin-top: .5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('css/form.css')}}">
 @endsection
 
 @section('header')
