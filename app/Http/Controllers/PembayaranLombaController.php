@@ -16,8 +16,13 @@ class PembayaranLombaController extends Controller
 
     public function index()
     {
-        if (Auth::user()->pembayaranLomba()->exists()) return redirect()->action('TeamDetailController@index');
-        return view('user.payment');
+        if (!Auth::user()->pembayaranLomba()->exists()) return view('user.payment');
+
+        if (is_null(Auth::user()->pembayaranLomba()->get()->first()->admin_id)) return redirect()->action('DashboardController@index');
+
+        if (!Auth::user()->detailPeserta()->exists()) return redirect()->action('DetailPesertaController@index');
+
+        return redirect()->action('DashboardController@index');
     }
 
     public function store(Request $request)
@@ -41,6 +46,6 @@ class PembayaranLombaController extends Controller
             'WaktuSubmitTransfer' => Carbon::now(),
         ]);
 
-        return redirect()->action('TeamDetailController@index');
+        return redirect()->action('DetailPesertaController@index');
     }
 }

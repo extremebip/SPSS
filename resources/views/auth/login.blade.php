@@ -15,7 +15,7 @@
     <div class="row">
         <h4 class="col-12"><strong>Sign In</strong></h4>
         {{ Form::open(['url' => 'login', 'class' => 'col-12 mt-3']) }}
-            <div class="form-group border-bottom border-dark input-field o">
+            <div class="form-group border-bottom border-dark input-field">
                 {{ Form::label('email', 'E-mail', ['class' => 'col-form-label px-2']) }}
                 {{ Form::email('email', '', ['class' => 'form-control border-0 '.($errors->has('email') ? 'is-invalid' : ''), 'value' => old('email'), 'required' => '', 'autofocus' => '', 'autocomplete' => 'email']) }}
                 @error('email')

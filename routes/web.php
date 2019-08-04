@@ -42,5 +42,5 @@ Route::post('/password/change', 'Auth\ChangePasswordController@change');
 Route::get('/payment', 'PembayaranLombaController@index');
 Route::post('/payment', 'PembayaranLombaController@store');
 
-Route::get('/register-peserta', 'TeamDetailController@index');
-Route::post('/register-peserta', 'TeamDetailController@store');
+Route::get('/register-peserta', 'DetailPesertaController@index');
+Route::post('/register-peserta', 'DetailPesertaController@store');

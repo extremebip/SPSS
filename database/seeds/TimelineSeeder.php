@@ -29,7 +29,7 @@ class TimelineSeeder extends Seeder
         ]);
 
         Timeline::create([
-            'Description' => 'Pengumuman Babak 2', 
+            'Description' => 'Pengumuman Babak 1', 
             'DateTime' => Carbon::create(2019, 9, 27, 12, 00, 00, '+07:00')
         ]);
 
@@ -44,13 +44,18 @@ class TimelineSeeder extends Seeder
         ]);
 
         Timeline::create([
-            'Description' => 'Pengumuman Grand Final', 
+            'Description' => 'Pengumuman Babak 2', 
             'DateTime' => Carbon::create(2019, 10, 28, 12, 00, 00, '+07:00')
         ]);
 
         Timeline::create([
             'Description' => 'Grand Final', 
             'DateTime' => Carbon::create(2019, 11, 29, 00, 00, 00, '+07:00')
+        ]);
+
+        Timeline::create([
+            'Description' => 'Talkshow',
+            'DateTime' => Carbon::create(2019, 11, 29, 11, 00, 00, '+07:00')
         ]);
     }
 }

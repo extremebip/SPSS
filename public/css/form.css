@@ -15,6 +15,12 @@
     background-color: #f2f2f2;
 }
 
+.img-upload{
+	margin-left: 7px;
+    width: 40px;
+    height: 40px;
+}
+
 .btn-group{
     margin: 1rem 0;
 }
@@ -22,6 +28,11 @@
 .active{
     color: white;
     background-color: #e4bf6a;
+}
+
+.regis-form-row{
+    margin-left: 10px;
+    margin-right: 0;
 }
 
 @media only screen and (max-width: 391px){

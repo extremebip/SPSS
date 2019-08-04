@@ -7,10 +7,16 @@
     </h5>
     <h5>Material:</h5>
     <ol>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>Data and Statistics</li>
+        <li>Descriptive Statistics</li>
+        <li>Probability</li>
+        <li>Descriptive Probability Distributions</li>
+        <li>Continuous Probability Distributions</li>
+        <li>Sampling and Sampling Distributions</li>
+        <li>Interval Estimation</li>
+        <li>Hypothesis Test</li>
+        <li>Anova</li>
+        <li>Linear Regression</li>
     </ol>
     <h5>Read guide book for Round 1: Click <a href="" class="button" id="guideBook">here</a></h5>
 </div>

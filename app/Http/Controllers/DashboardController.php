@@ -30,17 +30,20 @@ class DashboardController extends Controller
             return redirect()->action('PembayaranLombaController@index');
         }
 
-        if (!$team->teamDetail()->exists()) {
-            return redirect()->action('TeamDetailController@index');
+        if (is_null($team->pembayaranLomba()->get()->first()->admin_id)){
+            return view ('user.dashboard.paymentVerification');
         }
 
-        if (is_null($team->pembayaranLomba()->get()->first()->admin_id)){
-            return view('user.dashboard.verification');
+        if (!$team->detailPeserta()->exists()) {
+            return redirect()->action('DetailPesertaController@index');
+        }
+
+        if (is_null($team->admin_id)){
+            return view('user.dashboard.registerVerification');
         }
 
         $now = Carbon::now();
         
-
         return view('user.dashboard.Tahap1.before');
     }
 }

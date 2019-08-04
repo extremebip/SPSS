@@ -55,7 +55,7 @@
             </div>
             <div class="form-group row justify-content-end">
                 <div class="col-auto">
-                        {{ Form::submit('Submit', ['class' => 'btn btn-choose submit-btn']) }}
+                    {{ Form::submit('Submit', ['class' => 'btn btn-choose submit-btn']) }}
                 </div>
             </div>
             {{ Form::close() }}
