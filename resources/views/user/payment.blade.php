@@ -15,7 +15,7 @@
         <div>
             <h4>Bank Central Asia (BCA)</h4>
 			<h5>an. Tasya Fauziah DAN Andryan Kalmer</h5>
-			<h5>No Rek. 527xxxxxxxxx</h5>
+			<h5>No Rek. 5271752971</h5>
 			<p class="font">Total Payment : Rp. 75.000,-</p>
         </div>
 

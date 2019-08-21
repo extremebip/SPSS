@@ -18,7 +18,7 @@
         <li>Anova</li>
         <li>Linear Regression</li>
     </ol>
-    <h5>Read guide book for Round 1: Click <a href="" class="button" id="guideBook">here</a></h5>
+    <h5>Read guide book for Round 1: Click <a href="http://bit.ly/panduan-spss" target="_blank" rel="noopener noreferrer" class="button" id="guideBook">here</a></h5>
 </div>
 @endsection
 

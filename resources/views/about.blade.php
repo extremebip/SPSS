@@ -20,7 +20,7 @@
         <div class="w-100" id="break"></div>
         <div class="col text">
             <p class="font">Statistical Project for Smart Student (SPSS) adalah acara terbesar dan pertama yang diadakan oleh HIMSTAT Binus University berisikan lomba statistika dan talkshow</p>
-            <p class="font">SPSS diadakan mulai dari Agustus sampai Oktober dengan tema <span class="bold">"Achieve Better Life with the Insight of Data"</span> harapannya yaitu menambahkan wawasan baik pada era Revolusi Industri 4.0 di mana banyak perusahaan kecil  maupun besar telah mendigitalisasikan data-data yang jumlahnya sangat banyak</p>
+            <p class="font">SPSS diadakan mulai dari September sampai November dengan tema <span class="bold">"Achieve Better Life with the Insight of Data"</span> harapannya yaitu menambahkan wawasan baik pada era Revolusi Industri 4.0 di mana banyak perusahaan kecil  maupun besar telah mendigitalisasikan data-data yang jumlahnya sangat banyak</p>
         </div>
     </div>
 

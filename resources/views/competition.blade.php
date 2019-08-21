@@ -33,7 +33,7 @@
             <h5>teori, coding, hingga presentasi.</h5>
             <h5>Mau mengasah ketiga kemampuanmu di atas?</h5>
             <h5>Ayo daftarkan dirimu</h5>
-            <a href="" class="btn btn-choose submit-btn"><h5 class="button-text"><strong>Download Terms of Condition</strong></h5></a>
+            <a href="http://bit.ly/panduan-spss" target="_blank" rel="noopener noreferrer" class="btn btn-choose submit-btn"><h5 class="button-text"><strong>Download Terms of Condition</strong></h5></a>
             <a href="/register" class="btn submit-btn register-btn"><h5 class="button-text"><strong>Register</strong></h5></a>
         </div>
     </div>
