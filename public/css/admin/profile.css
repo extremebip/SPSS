@@ -1,0 +1,55 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.form-group {
+    background-color: #fdfdfd;
+    padding: 1.2em 0;
+    border: outset #fdfdfd 0.1em;
+    border-radius: 10px;
+    border-bottom: solid #e3e4e6 0.3em;
+}
+.col-form-label {
+    color: #041dd6;
+    font-weight: bold;
+}
+#edit-button {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    border: 0.15em solid #fff;
+    width: 2em;
+    height: 2em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.fa-edit {
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+}
+input {
+    text-indent: 0.5em;
+}
+.form-text {
+    text-align: left;
+    color: #ff1a1a;
+}
+.form-text b {
+    color: #ff1a1a;
+}
+.card-header {
+    border-bottom: inset #f4f4f4 0.5em;
+}
+.card-header > h3 {
+    margin: 0.4em 0;
+}
+.card-header > h3 > b {
+    vertical-align: middle;
+    color: #fff;
+    text-shadow: 0.1em 0.1em #000;
+}

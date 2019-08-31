@@ -34,7 +34,7 @@ class DashboardController extends Controller
             return view ('user.dashboard.paymentVerification');
         }
 
-        if (!$team->detailPeserta()->exists()) {
+        if (!$team->detailPesertas()->exists()) {
             return redirect()->action('DetailPesertaController@index');
         }
 
