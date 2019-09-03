@@ -51,5 +51,15 @@ footer a:hover {
 	margin: 0 1em;
 }
 .nav-item:hover {
-	border-bottom: 0.2em solid #fff;
+    -webkit-animation-name: navHover;
+    -webkit-animation-duration: 2s;
+    animation: navHover 2.0s forwards;
+}
+@-webkit-keyframes navHover {
+    0% {border-bottom: 0.2em solid transparent;}
+    100% {border-bottom: 0.2em solid #fff;}
+}
+@keyframes navHover {
+    0% {border-bottom: 0.2em solid transparent;}
+    100% {border-bottom: 0.2em solid #fff;}
 }

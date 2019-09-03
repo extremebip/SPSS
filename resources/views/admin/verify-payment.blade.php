@@ -1,6 +1,6 @@
 @extends('layouts.admin-layout')
-@section('title', 'SPSS Admin - HOME')
-@section('page', 'Verify')
+@section('title', 'SPSS Admin - Verify Payment')
+@section('page', 'Verify Payment')
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -38,6 +38,9 @@
 .frame-border .col {
     text-decoration: underline;
 }
+#text-verified {
+    text-shadow: -0.05em 0 black, 0 0.05em black, 0.05em 0 black, 0 -0.05em black;
+}
 </style>
 @endsection
 @section('content')
@@ -50,18 +53,16 @@
                 </h1>
                 <div class="card-body bg-info">
                     <div class="row">
-                        <div class="col-6 mx-auto frame-border">
+                        <a class="col-md-6 col-12 mx-auto frame-border" href="{{route('transferPhoto', $payment->BuktiTransfer)}}">
                             <div class="row">
-                                <h2 class="col text-center  text-warning">
+                                <h2 class="col text-center text-warning">
                                     Foto Bukti Pembayaran
                                 </h2>
                             </div>
-                            <a class="row" href="{{route('transferPhoto', $payment->BuktiTransfer)}}" target="_blank">
-                                <img class="col-6 mx-auto" src="{{route('transferPhoto', $payment->BuktiTransfer)}}" alt="">
-                            </a>
-                        </div>
+                            <img class="col-md-8 col-12 mx-auto img-fluid" src="{{route('transferPhoto', $payment->BuktiTransfer)}}" alt="">
+                        </a>
                     </div>
-                    <div class="col-6 mx-auto row text-center row-group">
+                    <div class="col-md-6 col-10 mx-auto row text-center row-group">
                         <div class="col-12 info">
                             NAMA PENGIRIM
                         </div>
@@ -69,7 +70,7 @@
                             {{ $payment->NamaPengirim }}
                         </div>
                     </div>
-                    <div class="col-6 mx-auto row text-center row-group">
+                    <div class="col-md-6 col-10 mx-auto row text-center row-group">
                         <div class="col-12 info">
                             NAMA BANK
                         </div>
@@ -77,7 +78,7 @@
                             {{ $payment->NamaBank }}
                         </div>
                     </div>
-                    <div class="col-6 mx-auto row text-center row-group">
+                    <div class="col-md-6 col-10 mx-auto row text-center row-group">
                         <div class="col-12 info">
                             WAKTU TRANSFER
                         </div>
@@ -85,12 +86,12 @@
                             {{ $payment->WaktuSubmitTransfer }}
                         </div>
                     </div>
-                    <div class="col-6 mx-auto row text-center">
+                    <div class="col-md-6 col-10 mx-auto row text-center">
                         @if($payment->admin_id)
                         <div class="mx-auto text-center text-success">
-                            <b>
+                            <h5><b id="text-verified">
                                 Payment has been verified by {{ App\Admin::find($payment->admin_id)->NamaLengkap }}
-                            </b>
+                            </b></h5>
                         </div>
                         @else
                         <div class="mx-auto text-center">

@@ -19,7 +19,7 @@ class DetailPesertaController extends Controller
 
         if (is_null(Auth::user()->pembayaranLomba()->get()->first()->admin_id)) return redirect()->action('DashboardController@index');
 
-        if (Auth::user()->detailPeserta()->exists()) return redirect()->action('DashboardController@index');
+        if (Auth::user()->detailPesertas()->exists()) return redirect()->action('DashboardController@index');
 
         return view('user.registerPeserta');
     }

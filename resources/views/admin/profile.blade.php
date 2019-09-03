@@ -1,4 +1,5 @@
 @extends('layouts.admin-layout')
+@section('title', 'SPSS Admin - Profile')
 @section('page', "Profile")
 @section('style')
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
@@ -11,8 +12,8 @@
             <div class="card text-center">
                 <div class="card-header bg-primary">
                     <h3><b>CHANGE YOUR PROFILE HERE</b></h3>
-                    <button id="edit-button" @click="enableEdit" :style="editable ? editButton : uneditButton" :title="editable ? 'Click to Edit' : 'Click to disable editing'">
-                        <i class="fas fa-edit" :style="editable ? editIcon : uneditIcon"></i>
+                    <button id="edit-button" @click="enableEdit" :style="editable ? uneditButton : editButton" :title="editable ? 'Click to disable editing' : 'Click to Edit'">
+                        <i class="fas fa-edit" :style="editable ? uneditIcon : editIcon"></i>
                     </button>
                 </div>
                 <div class="card-body">

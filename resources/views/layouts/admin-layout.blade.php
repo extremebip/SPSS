@@ -68,7 +68,7 @@
                         <!-- Authentication Links -->
                         @if (!Auth::guard('admin')->check() || Auth::guest())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Admin Login') }}</a>
                             </li>
                         @else
 

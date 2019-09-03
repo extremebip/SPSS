@@ -53,7 +53,8 @@ Route::prefix('admin')->group(function() {
 	Route::get('team-tahap-1', 'AdminController@teamTahap1')->name('team-tahap-1');
 	Route::get('team-tahap-2', 'AdminController@teamTahap2')->name('team-tahap-2');
 	Route::get('verify-email/{user}', 'AdminController@verifyEmail')->name('verify-email');
-	Route::post('verify-email/{user}', 'AdminController@updateVerifyEmail');
+	Route::get('verify-detail/{user}', 'AdminController@verifyDetail')->name('verify-detail');
+	Route::post('verify-detail/{user}', 'AdminController@updateVerifyDetail');
 	Route::get('ktm/{dp}', 'AdminController@ktm')->name('ktm');
 	Route::get('verify-payment/{user}', 'AdminController@verifyPayment')->name('verify-payment');
 	Route::post('verify-payment/{user}', 'AdminController@updateVerifyPayment');

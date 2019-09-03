@@ -1,5 +1,5 @@
 @extends('layouts.admin-layout')
-@section('title', 'SPSS Admin - HOME')
+@section('title', 'SPSS Admin - Home')
 @section('page', 'Hello, '.Auth::user()->NamaLengkap)
 @section('style')
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,12 +14,14 @@
         font-size: 1.3em;
     }
     .color-box {
+        display: inline-block;
         width: 1em;
         height: 1em;
         border: solid #000 0.1em;
     }
-    .float {
-        float: left;
+    .pagination {
+        display: flex;
+        justify-content: center;
     }
 </style>
 @endsection
@@ -37,19 +39,23 @@
                         <b>
                             @if($notif->description == 0)
                             Pembayaran Lomba
-                            @else($notif->description == 1)
+                            @elseif($notif->description == 1)
+                            Pelengkapan Detail Peserta
+                            @elseif($notif->description == 2)
                             Verifikasi Email
                             @endif
                         </b>
-                        <a href="{{ route($notif->description == 0 ? 'verify-payment' : 'verify-email', ['user' => $notif->id]) }}" class="verify-button"> <i class="fa fa-toggle-right"></i>  </a>
+                        <a href="{{ route($notif->description == 0 ? 'verify-payment' : ($notif->description == 1 ? 'verify-detail' : 'verify-email'), ['user' => $notif->id]) }}" class="verify-button"> <i class="fa fa-toggle-right"></i>  </a>
                     </h4>
                      <hr>
                      <p class="card-text">
                         {{ $notif->NamaLengkap }}
                         @if($notif->description == 0)
-                            telah melakukan pembayaran lomba!
+                            telah melakukan pembayaran lomba !
                         @elseif($notif->description == 1)
-                            telah menyelesaikan verifikasi email!
+                            telah melengkapi detail peserta lomba !
+                        @elseif($notif->description == 2)
+                            telah menyelesaikan verifikasi email !
                         @endif
                     </p>
                 </div>
@@ -58,11 +64,14 @@
                 </div>
             </div>
             @endforeach
-            <div style="margin-top: 3em;">
-                <div class="float color-box bg-success"></div>
-                <div class="float"><b>&nbsp; = Verified &nbsp;</b></div>
-                <div class="float color-box bg-danger"></div>
-                <div class="float"><b>&nbsp; = Not Verified &nbsp;</b></div>
+            <div class="row" style="margin-top: 3em;display: block">
+                <span class="color-box bg-success"></span>
+                <span><b> = Verified &nbsp;</b></span>
+                <span class="color-box bg-danger"></span>
+                <span><b> = Not Verified &nbsp;</b></span>
+            </div>
+            <div class="row text-center" style="margin-top: 3em; display: block;">
+                {{ $notifications->links() }}
             </div>
         </div>
     </div>

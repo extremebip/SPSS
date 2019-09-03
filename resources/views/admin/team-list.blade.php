@@ -1,4 +1,5 @@
 @extends('layouts.admin-layout')
+@section('title', 'SPSS Admin - Team List')
 @section('page', 'Team List')
 @section('style')
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>

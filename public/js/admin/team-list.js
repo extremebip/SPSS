@@ -7,6 +7,7 @@ Vue.component('team-table', {
             teams: this.users,
             id: true,
             fullname: true,
+            email: true,
             email_verif: true,
             university: true,
             status: true,
@@ -20,6 +21,7 @@ Vue.component('team-table', {
             else if (a < b) return -1;
             else return 0;
         },
+        byEmail(a ,b) { return this.compare(a.email, b.email) },
         byEmailVerif(a, b) { return this.compare(a.email_verified_at, b.email_verified_at) },
         byFullname(a, b) { return this.compare(a.NamaLengkap, b.NamaLengkap) },
         byUniversity(a ,b) { return this.compare(a.AsalUniversitas, b.AsalUniversitas) },
@@ -46,6 +48,10 @@ Vue.component('team-table', {
         },
         fullname(val) {
             this.sortBy(this.byFullname)
+            if (!val) this.reverse()
+        },
+        email(val) {
+            this.sortBy(this.byEmail)
             if (!val) this.reverse()
         },
         email_verif(val) {
@@ -75,6 +81,10 @@ Vue.component('team-table', {
                     Nama Pendaftar
                     <i class="fas" :class="fullname ? 'fa-caret-square-up' : 'fa-caret-square-down'"></i>
                 </th>
+                <th scope="col" @click="email = !email">
+                    Email 
+                    <i class="fas" :class="email ? 'fa-caret-square-up' : 'fa-caret-square-down'"></i>
+                </th>
                 <th scope="col" @click="email_verif = !email_verif">
                     Verifikasi Email
                     <i class="fas" :class="email_verif ? 'fa-caret-square-up' : 'fa-caret-square-down'"></i>
@@ -92,6 +102,7 @@ Vue.component('team-table', {
         <tr v-for="team in teams" @click="openModal(team)" data-toggle="modal" data-target="#detail-modal">
             <td>{{ team.id }}</div>
             <td>{{ team.NamaLengkap }}</div>
+            <td>{{ team.email }}</div>
             <td>{{ team.email_verified_at ? team.email_verified_at : 'Not Verified' }}</td>
             <td>{{ team.AsalUniversitas }}</td>
             <td>{{ team.pembayaran_lomba ? 'Paid' : 'Not Paid' }}</td>

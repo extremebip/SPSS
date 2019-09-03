@@ -29,9 +29,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $payments = PembayaranLomba::select('user_id', 'admin_id', 'NamaPengirim', 'WaktuSubmitTransfer', DB::raw("0 AS description"));
+        $payments = PembayaranLomba::join('users', 'pembayaran_lombas.user_id', '=', 'users.id')->select('user_id', 'pembayaran_lombas.admin_id', 'NamaLengkap', 'pembayaran_lombas.created_at', DB::raw("0 AS description"));
+        $details = User::join('detail_pesertas', 'users.id', '=', 'detail_pesertas.user_id')->select('users.id', 'admin_id', 'users.NamaLengkap', 'detail_pesertas.created_at', DB::raw("1 AS description"))->distinct();
         $notifications = User::whereNotNull('email_verified_at')
-                ->select('id', 'admin_id', 'NamaLengkap', DB::raw("email_verified_at AS activity_date"), DB::raw("1 AS description"))->union($payments)->orderBy('activity_date', 'desc')->get();
+                ->select('id', DB::raw("-1 AS admin_id"), 'NamaLengkap', DB::raw("email_verified_at AS activity_date"), DB::raw("2 AS description"))->union($payments)->union($details)->orderBy('activity_date', 'desc')->paginate(5);
         return view('admin.home')->with('notifications', $notifications);
     }
 
@@ -96,15 +97,21 @@ class AdminController extends Controller
 
         return view('admin.verify-email')->with('user', $user);
     }
+    
+    public function verifyDetail(User $user) {
+        if (!$user) return back();
 
-    public function updateVerifyEmail(User $user) {
+        return view('admin.verify-detail')->with('user', $user);
+    }
+    
+    public function updateVerifyDetail(User $user) {
         $user->admin_id = Auth::id();
         $user->save();
         return back();
     }
 
     public function ktm(DetailPeserta $dp) {
-        $filepath = 'team/'.$dp->KartuTandaMahasiswa;
+        $filepath = 'team/'.$dp->user_id.'/ktm/'.$dp->KartuTandaMahasiswa;
         if (!Storage::exists($filepath)) {
             abort(404);
         }
