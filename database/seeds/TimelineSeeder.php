@@ -15,22 +15,22 @@ class TimelineSeeder extends Seeder
     {
         Timeline::create([
             'Description' => 'Akhir Registrasi',
-            'DateTime' => Carbon::create(2019, 9, 20, 23, 59, 59, '+07:00')
+            'DateTime' => Carbon::create(2019, 9, 25, 23, 59, 59, '+07:00')
         ]);
 
         Timeline::create([
             'Description' => 'Awal Babak 1', 
-            'DateTime' => Carbon::create(2019, 9, 22, 13, 00, 00, '+07:00')
+            'DateTime' => Carbon::create(2019, 9, 29, 13, 00, 00, '+07:00')
         ]);
 
         Timeline::create([
             'Description' => 'Akhir Babak 1', 
-            'DateTime' => Carbon::create(2019, 9, 22, 16, 00, 00, '+07:00')
+            'DateTime' => Carbon::create(2019, 9, 29, 16, 00, 00, '+07:00')
         ]);
 
         Timeline::create([
             'Description' => 'Pengumuman Babak 1', 
-            'DateTime' => Carbon::create(2019, 9, 27, 12, 00, 00, '+07:00')
+            'DateTime' => Carbon::create(2019, 9, 3, 12, 00, 00, '+07:00')
         ]);
 
         Timeline::create([
@@ -50,7 +50,7 @@ class TimelineSeeder extends Seeder
 
         Timeline::create([
             'Description' => 'Grand Final', 
-            'DateTime' => Carbon::create(2019, 11, 29, 00, 00, 00, '+07:00')
+            'DateTime' => Carbon::create(2019, 11, 23, 00, 00, 00, '+07:00')
         ]);
 
         Timeline::create([

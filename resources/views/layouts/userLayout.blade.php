@@ -49,10 +49,19 @@
 						@endif
 					@else
 						<li class="nav-item dropdown">
+							@if (Auth::user()->detailPesertas()->exists())
+								@php
+								$user = Auth::user();
+								$KodePeserta = '';
+								foreach ($user->detailPesertas as $member) {
+									$KodePeserta .= $member->NamaLengkap[0];
+								}
+								$KodePeserta .= sprintf("%03d", $user->id);
+								@endphp
+							@endif
 							<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-								{{ Auth::user()->NamaLengkap }} <span class="caret"></span>
+								{{ Auth::user()->NamaLengkap.((Auth::user()->detailPesertas()->exists()) ? (' - '.$KodePeserta) : '') }} <span class="caret"></span>
 							</a>
-
 							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="/dashboard">Dashboard</a>
 

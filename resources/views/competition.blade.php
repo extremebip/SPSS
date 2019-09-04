@@ -52,19 +52,19 @@
                 <li>
                     <div class="timeline-item">
                         <h4><strong>Penutupan Pendaftaran</strong></h4>
-                        <p>20 September 2019</p>
+                        <p>25 September 2019</p>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-item">
                         <h4><strong>Pengerjaan Tahap I</strong> (online)</h4>
-                        <p>22 September 2019</p>
+                        <p>29 September 2019</p>
                     </div>
                 </li>
                 <li>
                     <div class="timeline-item">
                         <h4><strong>Pengumuman Tahap I</strong></h4>
-                        <p>27 September 2019</p>
+                        <p>3 Oktober 2019</p>
                     </div>
                 </li>
                 <li>
@@ -82,7 +82,7 @@
                 <li>
                     <div class="timeline-item">
                         <h4><strong>Babak Grand Final</strong> (Onsite)<span class="text-danger">*</span></h4>
-                        <p>29 - 30 November 2019</p>
+                        <p>23 - 24 November 2019</p>
                         <span class="text-danger">*) Waktu dapat dirubah sewaktu-waktu</span>
                     </div>
                 </li>
