@@ -31,6 +31,8 @@ Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::post('/timeline', 'TimelineController@getTimeline');
 
+Route::get('/download/{file}', 'FileController@download')->name('file-download');
+
 Route::get('admin', 'AdminController@index')->name('adminpage');
 Route::get('admin-login','Auth\AdminLoginController@showLoginForm');
 Route::post('admin-login', ['as' => 'admin-login', 'uses' => 'Auth\AdminLoginController@login']);
@@ -44,6 +46,8 @@ Route::post('/payment', 'PembayaranLombaController@store');
 
 Route::get('/register-peserta', 'DetailPesertaController@index');
 Route::post('/register-peserta', 'DetailPesertaController@store');
+
+Route::post('/tahap1/submit', 'Tahap1Controller@upload');
 
 Route::prefix('admin')->group(function() {
 	Route::get('profile', 'AdminController@profile')->name('admin-profile');

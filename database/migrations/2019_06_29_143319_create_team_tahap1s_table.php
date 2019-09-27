@@ -17,7 +17,7 @@ class CreateTeamTahap1sTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable();
             $table->integer('Skor')->nullable();
-            $table->string('FileSubmitCara')->nullable();
+            $table->string('FileSubmit')->nullable();
             $table->dateTime('WaktuSubmit')->nullable();
             $table->timestamps();
             $table->softDeletes();

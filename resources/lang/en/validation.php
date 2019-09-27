@@ -233,6 +233,13 @@ return [
             'image' => 'Kartu Mahasiswa harus berupa gambar',
             'max' => 'Ukuran gambar tidak boleh melebihi :max kilobytes'
         ],
+        // Babak Tahap 1 & Babak Tahap 2
+        'FileSubmit' => [
+            'required' => 'File tidak boleh kosong',
+            'file' => 'Harus berupa file',
+            'max' => 'Ukuran file tidak boleh melebihi :max kilobytes',
+            'mimes' => 'File harus berupa :values'
+        ],
     ],
 
     /*

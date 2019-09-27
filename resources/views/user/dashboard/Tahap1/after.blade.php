@@ -2,23 +2,11 @@
 
 @section('dashboardBody')
 <div class="content-text">
-    <h5 class="d-inline"><strong id="time"></strong>
-    <div class="d-inline"> to SPSS Round 1</div>
+    <h5>Terima kasih telah mengikuti SPSS round 1.</h5>
+    <br>
+    <h5 class="d-inline"><strong id="time">00:00:00:00</strong>
+    <div class="d-inline"> to Round 1 Announcement</div>
     </h5>
-    <h5>Material:</h5>
-    <ol>
-        <li>Data and Statistics</li>
-        <li>Descriptive Statistics</li>
-        <li>Probability</li>
-        <li>Descriptive Probability Distributions</li>
-        <li>Continuous Probability Distributions</li>
-        <li>Sampling and Sampling Distributions</li>
-        <li>Interval Estimation</li>
-        <li>Hypothesis Test</li>
-        <li>Anova</li>
-        <li>Linear Regression</li>
-    </ol>
-    <h5>Read guide book for Round 1: Click <a href="https://drive.google.com/open?id=1rPzl8-SdDW7-vMp2GQ8BuTUrR4bEHuDZ" target="_blank" rel="noopener noreferrer" class="button" id="guideBook">here</a></h5>
 </div>
 @endsection
 
@@ -26,7 +14,7 @@
     <script>
         var countdown;
         $(document).ready(function () {
-            $.post('/timeline', { id : 2 } ,function (data) {
+            $.post('/timeline', { id : 4 } ,function (data) {
                 console.log(data['datetime']);
                 try {
                     datetime = new Date(data['datetime']);

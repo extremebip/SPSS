@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Timeline;
 use Carbon\Carbon;
 
 class DashboardController extends Controller
@@ -26,12 +27,14 @@ class DashboardController extends Controller
     public function index()
     {
         $team = Auth::user();
+        $step = [];
+
         if (!$team->pembayaranLomba()->exists()) {
             return redirect()->action('PembayaranLombaController@index');
         }
 
         if (is_null($team->pembayaranLomba()->get()->first()->admin_id)){
-            return view ('user.dashboard.paymentVerification');
+            return view ('user.dashboard.paymentVerification', ['steps' => $step]);
         }
 
         if (!$team->detailPesertas()->exists()) {
@@ -39,11 +42,23 @@ class DashboardController extends Controller
         }
 
         if (is_null($team->admin_id)){
-            return view('user.dashboard.registerVerification');
+            return view('user.dashboard.registerVerification', ['steps' => $step]);
         }
 
         $now = Carbon::now();
+        $timeline = Timeline::all();
         
-        return view('user.dashboard.Tahap1.before');
+        array_push($step, 'Tahap1');
+        if ($now < new Carbon($timeline->find(2)->DateTime, '+07:00')){
+            return view('user.dashboard.Tahap1.before', ['steps' => $step]);
+        }
+        else if ($now < new Carbon($timeline->find(3)->DateTime, '+07:00') && is_null($team->teamTahap1()->first()->FileSubmit)){
+            return view ('user.dashboard.Tahap1.test', ['steps' => $step]);
+        }
+        else if ($now < new Carbon($timeline->find(4)->DateTime, '+07:00')){
+            return view('user.dashboard.Tahap1.after', ['steps' => $step]);
+        }
+        
+        else return ('test');
     }
 }

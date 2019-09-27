@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\DetailPeserta;
 use App\PembayaranLomba;
 use App\User;
+// use App\Mail\PembayaranLombaVerified;
+// use App\Mail\DetailPesertaVerified;
+// use App\Jobs\SendEmail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -81,6 +84,11 @@ class AdminController extends Controller
         $payment = PembayaranLomba::where('user_id', $id)->first();
         $payment->admin_id = Auth::id();
         $payment->save();
+
+        // $user = $payment->user()->get()->first();
+        // $mail = new PembayaranLombaVerified($user);
+        // SendEmail::dispatch($mail, $user);
+
         return back();
     }
 
@@ -107,6 +115,10 @@ class AdminController extends Controller
     public function updateVerifyDetail(User $user) {
         $user->admin_id = Auth::id();
         $user->save();
+
+        // $mail = new DetailPesertaVerified($user);
+        // SendEmail::dispatch($mail, $user);
+
         return back();
     }
 
@@ -124,5 +136,20 @@ class AdminController extends Controller
 
     public function teamTahap2() {
         return back();
+    }
+
+    public function GetStatus(Request $request)
+    {
+        $table = ($request['Tahap'] == 1) ? 'team_tahap1s' : 'team_tahap2s';
+
+        $statusList = DB::table($table)
+                    ->select([
+                        $table.'.id',
+                        'user_id',
+                        DB::raw("case when FileSubmit is null then 'Belum Submit' else WaktuSubmit end as WaktuSubmit"),
+                        'FileSubmit'
+                    ])->get();
+        
+        return json_encode($statusList);
     }
 }
