@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Storage;
 
 class Tahap1Controller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+    
     public function upload(Request $request) 
     {
         $this->validate($request, [
