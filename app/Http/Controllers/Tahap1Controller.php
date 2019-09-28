@@ -14,12 +14,14 @@ class Tahap1Controller extends Controller
     public function upload(Request $request) 
     {
         $this->validate($request, [
-            'FileSubmit' => ['required', 'file', 'mimes:pdf', 'max:3999']
+            'FileSubmit' => ['required', 'file', 'mimes:pdf', 'max:4000']
         ]);
 
         Storage::makeDirectory('team//'.Auth::id().'/tahap_1');
 
         $WaktuSubmit = Carbon::now();
+
+        $fileLiteralName = $request->file('FileSubmit')->getClientOriginalName();
         $fileName = sprintf("JawabanTahap1-%d-%d", Auth::id(), $WaktuSubmit->timestamp);
 
         $filePath = Storage::putFileAs('team//'.Auth::id().'/tahap_1', $request->file('FileSubmit'), $fileName);
@@ -29,7 +31,8 @@ class Tahap1Controller extends Controller
         $tahap1Data->update([
             'user_id' => Auth::id(),
             'FileSubmit' => $fileName,
-            'WaktuSubmit' => Carbon::now()
+            'WaktuSubmit' => Carbon::now(),
+            'FileName' => $fileLiteralName
         ]);
 
         return redirect()->action('DashboardController@index');

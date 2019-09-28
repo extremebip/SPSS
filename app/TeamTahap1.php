@@ -10,7 +10,7 @@ class TeamTahap1 extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'user_id', 'FileSubmit', 'WaktuSubmit', 'Skor'
+        'user_id', 'FileSubmit', 'WaktuSubmit', 'Skor', 'FileName'
     ];
 
     public function user()
