@@ -111,7 +111,6 @@
 
         if (url !== ""){
             $('#download').prop('src', url);
-            $('#download').prop('src', '');
         }
     }
 
