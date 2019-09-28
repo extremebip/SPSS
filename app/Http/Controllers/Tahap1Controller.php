@@ -22,7 +22,7 @@ class Tahap1Controller extends Controller
         $WaktuSubmit = Carbon::now();
 
         $fileLiteralName = $request->file('FileSubmit')->getClientOriginalName();
-        $fileName = sprintf("JawabanTahap1-%d-%d", Auth::id(), $WaktuSubmit->timestamp);
+        $fileName = sprintf("JawabanTahap1-%d-%d.pdf", Auth::id(), $WaktuSubmit->timestamp);
 
         $filePath = Storage::putFileAs('team//'.Auth::id().'/tahap_1', $request->file('FileSubmit'), $fileName);
 
