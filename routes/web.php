@@ -49,6 +49,8 @@ Route::post('/register-peserta', 'DetailPesertaController@store');
 
 Route::post('/tahap1/submit', 'Tahap1Controller@upload');
 
+Route::post('/tahap2/submit', 'Tahap2Controller@upload');
+
 Route::prefix('admin')->group(function() {
 	Route::get('profile', 'AdminController@profile')->name('admin-profile');
 	Route::post('profile', 'AdminController@update');

@@ -25,11 +25,15 @@ class FileController extends Controller
 
         switch ($fileType) {
             case 'SoalTahap1':
-                return Storage::download('file/SoalTahap1.docx');
+                return Storage::download('file/SoalTahap1.pdf');
                 break;
             
             case 'LembarJawaban':
                 return Storage::download('file/LembarJawaban.docx');
+                break;
+
+            case 'SoalTahap2':
+                return Storage::download('file/SoalTahap2.docx');
                 break;
 
             default:
