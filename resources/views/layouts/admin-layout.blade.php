@@ -50,12 +50,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('team-tahap-2') }}">
+                                <a class="nav-link" href="{{ route('team-tahap-1') }}">
                                     Team Tahap 1
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('team-tahap-1') }}">
+                                <a class="nav-link" href="{{ route('team-tahap-2') }}">
                                     Team Tahap 2
                                 </a>
                             </li>

@@ -19,7 +19,7 @@ class Tahap2Controller extends Controller
     public function upload(Request $request) 
     {
         $this->validate($request, [
-            'FileSubmit' => ['required', 'file', 'mimes:pdf', 'max:4000']
+            'FileSubmit' => ['required', 'file', 'mimes:pdf', 'max:8000']
         ]);
 
         Storage::makeDirectory('team//'.Auth::id().'/tahap_2');

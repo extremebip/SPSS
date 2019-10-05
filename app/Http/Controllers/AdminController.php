@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use App\DetailPeserta;
 use App\PembayaranLomba;
+use App\TeamTahap1;
+use App\TeamTahap2;
 use App\User;
 // use App\Mail\PembayaranLombaVerified;
 // use App\Mail\DetailPesertaVerified;
 // use App\Jobs\SendEmail;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use ZipArchive;
 
 class AdminController extends Controller
 {
@@ -131,11 +135,45 @@ class AdminController extends Controller
     }
 
     public function teamTahap1() {
-        return back();
+        $teamList = TeamTahap1::with('user')->get();
+        return view('admin.tahap1')->with('teams', $teamList);
     }
 
     public function teamTahap2() {
-        return back();
+        $teamList = TeamTahap2::with('user')->get();
+        return view('admin.tahap2')->with('teams', $teamList);
+    }
+
+    public function downloadFileTahap2(TeamTahap2 $team){
+        $waktuSubmit = Carbon::parse($team->WaktuSubmit)->timestamp;
+        $fileName = $waktuSubmit.'_'.$team->FileName;
+        $path = sprintf('team/%d/tahap_2/%s', $team->user_id, $team->FileSubmit);
+        return Storage::download($path, $fileName);
+    }
+
+    public function downloadAllTahap2()
+    {
+        $teamList = TeamTahap2::whereNotNull('FileSubmit')->get();
+
+        if ($teamList->count() > 0){
+            $zip = new ZipArchive();
+            $zipName = 'ListJawaban2.zip';
+            $zip->open($zipName, ZipArchive::CREATE | ZipArchive::OVERWRITE);
+
+            foreach ($teamList as $team) {
+                $waktuSubmit = Carbon::parse($team->WaktuSubmit)->timestamp;
+                $fileName = $waktuSubmit.'_'.$team->FileName;
+                $filePath = sprintf('app/team/%d/tahap_2/%s', $team->id, $team->FileSubmit);
+                $zip->addFile(storage_path($filePath), $fileName);
+            }
+
+            $zip->close();
+
+            $zipPath = public_path().'/'.$zipName;
+            return response()->download($zipPath)->deleteFileAfterSend();
+        }
+
+        return;
     }
 
     public function GetStatus(Request $request)
@@ -147,9 +185,13 @@ class AdminController extends Controller
                         $table.'.id',
                         'user_id',
                         DB::raw("case when FileSubmit is null then 'Belum Submit' else WaktuSubmit end as WaktuSubmit"),
-                        'FileSubmit'
-                    ])->get();
+                        'FileSubmit',
+                        'FileName'
+                    ])
+                    ->orderByRaw('WaktuSubmit IS NULL')
+                    ->orderBy('WaktuSubmit', 'asc')
+                    ->get();
         
-        return json_encode($statusList);
+        return response()->json([ 'status' => $statusList]);
     }
 }

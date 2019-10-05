@@ -44,7 +44,7 @@
     </div>
     <div class="form-group row">
         <span class="text-danger">
-            *Files tidak boleh melebihi 4MB
+            *Files tidak boleh melebihi 8MB
         </span>
     </div>
     <div class="form-group row">
