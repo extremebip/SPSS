@@ -1,0 +1,35 @@
+.card-header {
+    border-bottom: solid #ccdee2 0.5em;
+    background-image: linear-gradient(180.3deg, rgba(221,221,221,1) 5.5%, rgba(110,136,161,1) 90.2%);
+}
+.table th {
+    cursor: default;
+}
+.fas {
+    cursor: pointer;
+}
+.card-header > h3 {
+    margin: 0.4em 0;
+}
+.card-header > h3 > b {
+    vertical-align: middle;
+    color: #fff;
+    text-shadow: 0.1em 0.1em #000;
+    font-size: 1.5em;
+}
+tr:hover {
+    background-color: #e3e4e6;
+    box-shadow: 0.2em 0.3em #7c7e7f;
+    cursor: pointer;
+    font-weight: bold;
+}
+.detail-row {
+	margin: 0.5em 0;
+}
+.detail-title {
+	font-size: 1.5em;
+	border: ridge #fff 0.3em;
+}
+.modal-header {
+	text-align: center;
+}

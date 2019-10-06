@@ -18,7 +18,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'NamaLengkap', 'email', 'password', 'AsalUniversitas'
+        'NamaLengkap', 'email', 'password', 'AsalUniversitas', 'admin_id'
     ];
 
     /**
@@ -44,8 +44,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne('App\PembayaranLomba');
     }
 
-    public function teamDetail()
+    public function detailPesertas()
     {
-        return $this->hasOne('App\TeamDetail');
+        return $this->hasMany('App\DetailPeserta');
+    }
+
+    public function teamTahap1()
+    {
+        return $this->hasOne('App\TeamTahap1');
+    }
+
+    public function teamTahap2()
+    {
+        return $this->hasOne('App\TeamTahap2');
     }
 }

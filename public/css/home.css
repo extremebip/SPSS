@@ -1,0 +1,141 @@
+#top{
+    margin-top: 25px;
+}
+
+.video{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (orientation: landscape){
+    .img-fluid{
+        width: 50%;
+        height: auto;
+    }
+
+    .img-vid{
+        width: 45%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 1012px){
+    #break{
+        width: 0!important;
+        height: 50px;
+    }
+}
+
+.btn-play{
+    display: block;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    margin: 12.5% auto;
+}
+
+.title{
+    line-height: 0.8;
+}
+
+.title-text{
+    font-family: 'Airbnb Cereal App Black';
+    font-size: 4rem;
+}
+
+.desc-group{
+    margin-top: 30px;
+    line-height: 0.8;
+}
+
+.desc-title{
+    text-align: right;
+    font-family: 'Airbnb Cereal App Black';
+    font-size: 3rem;
+}
+
+.desc-text{
+    text-align: right;
+}
+
+#time{
+    font-size: 3rem;
+}
+
+.rounded-circle{
+    background-color: #f2f2f2;
+    width: 300px;
+    height: 300px;
+}
+
+.button-text{
+    margin-bottom: 0px;
+}
+
+.competition{
+    background-color: #fda0a0;
+    margin-top: 55px;
+}
+
+.competition-body{
+    margin-top: -45px;
+    padding-bottom: 1rem; 
+}
+
+.card-body{
+    padding: 0.25rem;
+    background-color: #f2f2f2;
+}
+
+#comp-regis{
+    margin-top: 15px;
+    margin-left: auto;
+}
+.home-img{
+    float:left;
+}
+.talkshow{
+    flex-direction: row-reverse;
+    background-color: #fed57e;
+    margin-top: 55px;
+}
+
+.talkshow-itm-img{
+    margin-top: -25px;
+    margin-bottom: 15px;
+}
+
+.talkshow-img{
+    float: left;
+    max-width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+}
+
+#talkshow-regis{
+    margin-left: 0px;
+    margin-right: auto;
+}
+
+@media only screen and (orientation: portrait){
+    .vid-container{
+        margin-top: 1rem!important;
+    }
+    
+    .title-text{
+        font-size: 3rem;
+    }
+
+    .img-vid{
+        width: 100%;
+    }
+
+    #talkshow-regis{
+        margin-bottom: 5%;
+    }
+
+    .competition-item{
+        margin-bottom: 5%;
+    }
+}

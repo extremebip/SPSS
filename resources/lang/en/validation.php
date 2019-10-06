@@ -129,7 +129,13 @@ return [
     */
 
     'custom' => [
-        //Pembayaran Lomba
+        // User
+        'AsalUniversitas' => [
+            'required' => 'Asal Universitas tidak boleh kosong',
+            'string' => 'Asal Universitas harus berupa tulisan',
+            'max' => 'Asal Universitas tidak boleh melebihi :max karakter'
+        ],
+        // Pembayaran Lomba
         'NamaPengirim' => [
             'required' => 'Nama Pengirim tidak boleh kosong',
             'string' => 'Nama Pengirim harus berupa tulisan',
@@ -146,12 +152,16 @@ return [
             'image' => 'Bukti Transfer harus berupa gambar',
             'max' => 'Ukuran gambar tidak boleh melebihi :max kilobytes'
         ],
-        //Team Detail
+        // Detail Peserta
         // Peserta 1
         'NamaPeserta1' => [
             'required' => 'Nama Peserta tidak boleh kosong',
             'string' => 'Nama Peserta harus berupa tulisan',
             'max' => 'Nama Peserta tidak boleh melebihi :max karakter'
+        ],
+        'JenisKelaminPeserta1' => [
+            'required' => 'Jenis Kelamin tidak boleh kosong',
+            'string' => 'Jenis Kelamin harus berupa tulisan',
         ],
         'JurusanPeserta1' => [
             'required' => 'Jurusan Peserta tidak boleh kosong',
@@ -167,6 +177,16 @@ return [
             'string' => 'ID Line Peserta harus berupa tulisan',
             'max' => 'ID Line Peserta tidak boleh melebihi :max karakter'
         ],
+        'JurusanPeserta1' => [
+            'required' => 'Jurusan tidak boleh kosong',
+            'string' => 'Jurusan harus berupa tulisan',
+            'max' => 'Jurusan tidak boleh melebihi :max karakter'
+        ],
+        'NIMPeserta1' => [
+            'required' => 'NIM tidak boleh kosong',
+            'string' => 'NIM harus berupa tulisan',
+            'max' => 'NIM tidak boleh melebihi :max karakter'
+        ],
         'KartuTandaMahasiswa1' => [
             'required' => 'Kartu Mahasiswa tidak boleh kosong',
             'file' => 'Kartu Mahasiswa harus berupa file',
@@ -178,6 +198,10 @@ return [
             'required' => 'Nama Peserta tidak boleh kosong',
             'string' => 'Nama Peserta harus berupa tulisan',
             'max' => 'Nama Peserta tidak boleh melebihi :max karakter'
+        ],
+        'JenisKelaminPeserta2' => [
+            'required' => 'Jenis Kelamin tidak boleh kosong',
+            'string' => 'Jenis Kelamin harus berupa tulisan',
         ],
         'JurusanPeserta2' => [
             'required' => 'Jurusan Peserta tidak boleh kosong',
@@ -193,11 +217,28 @@ return [
             'string' => 'ID Line Peserta harus berupa tulisan',
             'max' => 'ID Line Peserta tidak boleh melebihi :max karakter'
         ],
+        'JurusanPeserta2' => [
+            'required' => 'Jurusan tidak boleh kosong',
+            'string' => 'Jurusan harus berupa tulisan',
+            'max' => 'Jurusan tidak boleh melebihi :max karakter'
+        ],
+        'NIMPeserta2' => [
+            'required' => 'NIM tidak boleh kosong',
+            'string' => 'NIM harus berupa tulisan',
+            'max' => 'NIM tidak boleh melebihi :max karakter'
+        ],
         'KartuTandaMahasiswa2' => [
             'required' => 'Kartu Mahasiswa tidak boleh kosong',
             'file' => 'Kartu Mahasiswa harus berupa file',
             'image' => 'Kartu Mahasiswa harus berupa gambar',
             'max' => 'Ukuran gambar tidak boleh melebihi :max kilobytes'
+        ],
+        // Babak Tahap 1 & Babak Tahap 2
+        'FileSubmit' => [
+            'required' => 'File tidak boleh kosong',
+            'file' => 'Harus berupa file',
+            'max' => 'Ukuran file tidak boleh melebihi :max kilobytes',
+            'mimes' => 'File harus berupa :values'
         ],
     ],
 

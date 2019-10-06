@@ -1,0 +1,67 @@
+.logo-spss{
+	width: 100%;
+}
+
+.video{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+@media only screen and (min-width: 1012px){
+	#break{
+		width: 0!important;
+		height: 50px;
+	}
+}
+
+.btn-play{
+	display: block;
+	width: auto;
+	height: auto;
+	cursor: pointer;
+	margin: 12.5% auto;
+}
+
+.font{
+	font-size: 19px;
+	text-align: justify;
+}
+
+.bold{
+	font-weight: 720;
+}
+
+.background {
+  background-image: url("Assets/accent.png"); 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-size: 50%; 
+}
+
+.tujuan-title{
+	margin: 1% 5%;
+}
+
+.box{
+	background-color: #f2f2f2;
+	padding: 10px;
+	border-radius: 10px;
+	width: 65%;
+	margin: 1% 10%;
+	margin-bottom: 50px;
+	font-family: 'Airbnb Cereal App Light';
+	font-size: 18px;
+	font-weight: 500;
+}
+
+@media only screen and (orientation: portrait){
+	.box{
+		width: 100%;
+	}
+
+	.tujuan-title{
+		display: flex;
+		justify-content: center;
+	}
+}

@@ -1,0 +1,65 @@
+body {
+	background-color: #f5f5f5!important;
+	font-family: 'Airbnb Cereal App Book';
+}
+.navbar {
+	background-color: #263354!important;
+}
+.spss-marquee {
+    overflow: hidden;
+    padding: 0 10px	;
+}
+.spss-marquee a {
+	margin: auto 0;
+    animation: marquee 5s linear infinite;
+}
+@keyframes marquee {
+    0%   { transform: translate(-175%, 0); }
+    100% { transform: translate(175%, 0); }
+}
+footer {
+	background-color: #45526e!important;
+}
+footer p, footer a {
+	color: #fff;
+}
+footer a:hover {
+	color: #000;
+}
+.dropdown-menu {
+	transform-origin: top;
+	animation: dropdown 0.3s ease;
+	background-color: #adadad!important;
+}
+@keyframes dropdown {
+	0% { transform: scale(1,0); }
+	100% { transform: scale(1,1); }
+}
+.dropdown-item {
+	background-color: #e0e0e0!important;
+	color: #3e4551!important;
+	font-weight: bold;
+}
+.dropdown-item:hover {
+	color: #e0e0e0!important;
+	background-color: #3e4551!important;
+	font-weight: bolder;
+}
+.nav-item {
+	border-bottom: 0.2em solid transparent;
+	box-sizing: content-box;
+	margin: 0 1em;
+}
+.nav-item:hover {
+    -webkit-animation-name: navHover;
+    -webkit-animation-duration: 2s;
+    animation: navHover 2.0s forwards;
+}
+@-webkit-keyframes navHover {
+    0% {border-bottom: 0.2em solid transparent;}
+    100% {border-bottom: 0.2em solid #fff;}
+}
+@keyframes navHover {
+    0% {border-bottom: 0.2em solid transparent;}
+    100% {border-bottom: 0.2em solid #fff;}
+}

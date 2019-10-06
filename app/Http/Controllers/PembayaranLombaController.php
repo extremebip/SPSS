@@ -16,8 +16,13 @@ class PembayaranLombaController extends Controller
 
     public function index()
     {
-        if (Auth::user()->pembayaranLomba()->exists()) return redirect()->action('TeamDetailController@index');
-        return view('user.payment');
+        if (!Auth::user()->pembayaranLomba()->exists()) return view('user.payment');
+
+        if (is_null(Auth::user()->pembayaranLomba()->get()->first()->admin_id)) return redirect()->action('DashboardController@index');
+
+        if (!Auth::user()->detailPesertas()->exists()) return redirect()->action('DetailPesertaController@index');
+
+        return redirect()->action('DashboardController@index');
     }
 
     public function store(Request $request)
@@ -28,8 +33,10 @@ class PembayaranLombaController extends Controller
             'BuktiTransfer' => ['required', 'file', 'image', 'max:3999']
         ]);
 
-        $filePath = Storage::put('bukti_pembayaran', $request->file('BuktiTransfer'));
-        $fileName = basename($filePath);
+        $ext = $request['BuktiTransfer']->getClientOriginalExtension();
+        $fileName = sprintf("BuktiTransfer-%d-%s-%s.%s", Auth::id(), str_replace(' ', '_', $request['NamaPengirim']), str_replace(' ', '_', $request['NamaBank']), $ext);
+        
+        $filePath = Storage::putFileAs("bukti_pembayaran", $request->file('BuktiTransfer'), $fileName);
 
         $PembayaranLomba = PembayaranLomba::create([
             'user_id' => Auth::id(),
@@ -39,6 +46,6 @@ class PembayaranLombaController extends Controller
             'WaktuSubmitTransfer' => Carbon::now(),
         ]);
 
-        return redirect()->action('TeamDetailController@index');
+        return redirect()->action('DetailPesertaController@index');
     }
 }
