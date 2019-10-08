@@ -25,6 +25,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('admin-tahap-2', function ($admin)
+        {
+            $allowedId = array(1);
+            return in_array($admin->id, $allowedId);
+        });
     }
 }

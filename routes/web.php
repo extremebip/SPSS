@@ -57,7 +57,7 @@ Route::prefix('admin')->group(function() {
 	Route::get('team-list', 'AdminController@teamList')->name('team-list');
 	Route::get('team-detail', 'AdminController@teamDetail');
 	Route::get('team-tahap-1', 'AdminController@teamTahap1')->name('team-tahap-1');
-	Route::prefix('team-tahap-2')->group(function ()
+	Route::group(['prefix' => 'team-tahap-2', 'middleware' => 'can:admin-tahap-2'], function ()
 	{
 		Route::get('/', 'AdminController@teamTahap2')->name('team-tahap-2');
 		Route::get('download/{team}', 'AdminController@downloadFileTahap2');

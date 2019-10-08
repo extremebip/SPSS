@@ -3,6 +3,7 @@
 @section('page', 'Team Tahap 2')
 @section('style')
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{{ asset('css/admin/team-list.css') }}">
 @endsection
 @section('content')
@@ -16,7 +17,10 @@
                 <div class="card-body">
                     <div class="row mb-2">
                         <div class="col-auto mr-auto">
-                            <button class="button button-primary" id="refresh">Refresh</button>
+                            <button class="button button-primary" id="refresh">
+                                <i class="fa fa-refresh"></i>
+                                Refresh
+                            </button>
                         </div>
                         <div class="col-auto">
                             <button class="button button-success" id="download_all">Download All</button>
@@ -119,6 +123,7 @@
         });
 
         $('#download_all').click(function () {
+            getStatus();
             url = '{{ route('download-all-tahap-2') }}';
             $('#download-iframe').prop('src', url);
         });
