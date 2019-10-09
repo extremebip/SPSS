@@ -163,7 +163,7 @@ class AdminController extends Controller
             foreach ($teamList as $team) {
                 $waktuSubmit = Carbon::parse($team->WaktuSubmit)->timestamp;
                 $fileName = $waktuSubmit.'_'.$team->FileName;
-                $filePath = sprintf('app/team/%d/tahap_2/%s', $team->id, $team->FileSubmit);
+                $filePath = sprintf('app/team/%d/tahap_2/%s', $team->user_id, $team->FileSubmit);
                 $zip->addFile(storage_path($filePath), $fileName);
             }
 
