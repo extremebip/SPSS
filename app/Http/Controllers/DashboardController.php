@@ -75,5 +75,28 @@ class DashboardController extends Controller
         else if ($now < new Carbon($timeline->find(7)->DateTime, '+07:00')){
             return view('user.dashboard.Tahap2.after', ['steps' => $step]);
         }
+
+        if (!$team->teamFinal()->exists()){
+            return view('user.dashboard.Tahap2.fail', ['steps' => $step]);
+        }
+
+        // Grand Final
+        $teamFinal = $team->teamFinal()->first();
+        if ($teamFinal->IsWaiting == 1){
+            return view('user.dashboard.TahapFinal.waiting', ['steps' => $step]);
+        }
+        else if ($teamFinal->IsConfirmed == 0){
+            return view('user.dashboard.TahapFinal.success', ['steps' => $step]);
+        }
+        else if ($teamFinal->IsConfirmed == 1 && is_null($teamFinal->FileCV)){
+            return view('user.dashboard.TahapFinal.submitCV', ['steps' => $step]);
+        }
+        else if (!is_null($teamFinal->FileCV)){
+            array_push($step, 'TahapFinal');
+            return view('user.dashboard.TahapFinal.final', ['steps' => $step]);
+        }
+        else {
+
+        }
     }
 }

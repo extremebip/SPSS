@@ -58,4 +58,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne('App\TeamTahap2');
     }
+
+    public function teamFinal()
+    {
+        return $this->hasOne('App\TeamFinal');
+    }
 }

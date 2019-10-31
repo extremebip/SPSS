@@ -18,7 +18,10 @@ class CreateTeamFinalsTable extends Migration
             $table->integer('user_id')->nullable();
             $table->boolean('IsWaiting')->nullable();
             $table->boolean('IsConfirmed')->nullable();
+            $table->string('FileCV')->nullable();
+            $table->string('FileName')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
