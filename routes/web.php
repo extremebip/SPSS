@@ -65,6 +65,13 @@ Route::prefix('admin')->group(function() {
 		Route::get('download/{team}', 'AdminController@downloadFileTahap2');
 		Route::get('download-all', 'AdminController@downloadAllTahap2')->name('download-all-tahap-2');
 	});
+	Route::group(['prefix' => 'team-final'], function ()
+	{
+		Route::get('/', 'AdminController@teamFinal')->name('team-final');
+		Route::post('update-confirm', 'AdminController@updateFinalConfirm')->name('final-update-confirm');
+		Route::post('to-finalis', 'AdminController@toFinalis')->name('to-finalis');
+		Route::get('download/{team}', 'AdminController@downloadCv');
+	});
 	Route::post('get-status', 'AdminController@GetStatus')->name('get-status');
 	Route::get('verify-email/{user}', 'AdminController@verifyEmail')->name('verify-email');
 	Route::get('verify-detail/{user}', 'AdminController@verifyDetail')->name('verify-detail');

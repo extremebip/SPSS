@@ -6,6 +6,7 @@ use App\DetailPeserta;
 use App\PembayaranLomba;
 use App\TeamTahap1;
 use App\TeamTahap2;
+use App\TeamFinal;
 use App\User;
 // use App\Mail\PembayaranLombaVerified;
 // use App\Mail\DetailPesertaVerified;
@@ -176,11 +177,66 @@ class AdminController extends Controller
         return;
     }
 
+    public function teamFinal()
+    {
+        $teamFinalis = TeamFinal::where('IsWaiting', '=', 0)
+                                ->with('user')
+                                ->orderBy('isConfirmed', 'desc')
+                                ->orderBy('id')
+                                ->get();
+        $teamWaiting = TeamFinal::where('IsWaiting', '=', 1)->with('user')->get();
+        return view('admin.tahapFinal')->with(['Finalis' => $teamFinalis, 'WaitingList' => $teamWaiting]);
+    }
+
+    public function updateFinalConfirm(Request $request)
+    {
+        $teamFinal = TeamFinal::find($request['id']);
+        $teamFinal->IsConfirmed = $request['isConfirmed'];
+        $teamFinal->save();
+
+        return redirect()->action('AdminController@teamFinal');
+    }
+
+    public function toFinalis(Request $request)
+    {
+        $teamFinal = TeamFinal::find($request['id']);
+        $teamFinal->IsWaiting = 0;
+        $teamFinal->save();
+
+        return response()->json(['success' => 1]);
+    }
+
+    public function downloadCv(TeamFinal $team)
+    {
+        $fileName = $team->FileName;
+        $path = sprintf('team/%d/final/%s', $team->user_id, $team->FileCV);
+        return Storage::download($path, $fileName);
+    }
+
     public function GetStatus(Request $request)
     {
-        $table = ($request['Tahap'] == 1) ? 'team_tahap1s' : 'team_tahap2s';
+        if ($request['Tahap'] == "final"){
+            $waiting = ($request['type'] == 'waiting') ? 1 : 0;
 
-        $statusList = DB::table($table)
+            $statusList = DB::table('team_finals')
+                    ->join('users', 'users.id', '=', 'team_finals.user_id')
+                    ->join('detail_pesertas', 'detail_pesertas.user_id', '=', 'users.id')
+                    ->select([
+                        'team_finals.id',
+                        'team_finals.user_id',
+                        'detail_pesertas.NamaLengkap',
+                        'IsConfirmed',
+                        'FileCV'
+                    ])
+                    ->where('IsWaiting', '=', $waiting)
+                    ->orderBy('isConfirmed', 'desc')
+                    ->orderBy('id')
+                    ->get();
+        }
+        else {
+            $table = ($request['Tahap'] == 1) ? 'team_tahap1s' : 'team_tahap2s';
+
+            $statusList = DB::table($table)
                     ->select([
                         $table.'.id',
                         'user_id',
@@ -191,7 +247,8 @@ class AdminController extends Controller
                     ->orderByRaw('WaktuSubmit IS NULL')
                     ->orderBy('WaktuSubmit', 'asc')
                     ->get();
-        
+        }
+
         return response()->json([ 'status' => $statusList]);
     }
 }
