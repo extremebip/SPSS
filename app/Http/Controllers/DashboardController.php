@@ -88,6 +88,9 @@ class DashboardController extends Controller
         else if ($teamFinal->IsConfirmed == 0){
             return view('user.dashboard.TahapFinal.success', ['steps' => $step]);
         }
+        else if ($teamFinal->IsConfirmed == -1){
+            return view('user.dashboard.TahapFinal.tidakHadir', ['steps' => $step]);
+        }
         else if ($teamFinal->IsConfirmed == 1 && is_null($teamFinal->FileCV)){
             return view('user.dashboard.TahapFinal.submitCV', ['steps' => $step]);
         }
